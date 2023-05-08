@@ -1,8 +1,7 @@
 @charset"utf-8";
-
 main {
-  width: 360px;
-  margin: 32px auto;
+ width: 360px;
+ margin: 32px auto;
 }
 
 section {
@@ -18,31 +17,30 @@ h1 {
  padding: 8px 0;
 }
 
-p{
-  margin:0;
-  font-weight: bold;
-  font-size: 36px;
-  padding: 24px 0;
+p {
+ margin:0;
+ font-weight: bold;
+ font-size: 36px;
+ padding: 24px 0;
 }
 
 button {
-  all: unset;
-  width: 100%;
-  background: green;
-  border-radius: 8px;
-  color: white;
-  text-align: center;
-  padding: 8px 0;
-  margin-top: 16px;
-  cursor: pointer;
-  box-shadow: 0 4px gray;
+ all: unset;
+ width: 100%;
+ background: green;
+ border-radius: 8px;
+ color: white;
+ text-align: center;
+ padding: 8px 0;
+ margin-top: 16px;
+ cursor: pointer;
+ box-shadow: 0 4px gray;
 }
 
 button:hover {
-  opacity: .8;
+ opacity: .8;
 }
 
-button:active{
-
-  transform: translateY(3px);
+button:active {
+ transform: translateY(3px);
 }
