@@ -24,6 +24,12 @@ p {
   padding: 24px 0;
 }
 
+#result {
+  padding: 10px;
+  margin: 0;
+  font-size:2em;
+}
+
 button {
   all: unset;
   width: 100%;
@@ -43,4 +49,10 @@ button:hover {
 
 button:active {
   transform: translateY(3px);
+}
+.food-img {
+  display: none;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
 }
