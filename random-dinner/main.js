@@ -13,31 +13,31 @@
       });
     if (results[n] === 'あさり汁') {
       foodImgs.forEach((img) => {
-        img.src = 'asarijiru.jpeg';
+        img.src = 'food-img/asarijiru.jpeg';
         img.alt = 'あさり汁の画像';
         img.style.display = 'block';
       });
     } else if (results[n] === '野菜炒め') {
       foodImgs.forEach((img) => {
-        img.src = 'yasaiitame.jpeg';
+        img.src = 'food-img/yasaiitame.jpeg';
         img.alt = '野菜炒めの画像';
         img.style.display = 'block';
       });
     } else if (results[n] === 'ぱらぱらチャーハン') {
       foodImgs.forEach((img) => {
-        img.src = 'tya-han.jpeg';
+        img.src = 'food-img/tya-han.jpeg';
         img.alt = 'ぱらぱらチャーハンの画像';
         img.style.display = 'block';
       });
     } else if (results[n] === '塩ラーメン') {
       foodImgs.forEach((img) => {
-        img.src = 'sio-ramen.jpeg';
+        img.src = 'food-img/sio-ramen.jpeg';
         img.alt = '塩ラーメンの画像';
         img.style.display = 'block';
       });
     } else if (results[n] === '小倉トースト') {
       foodImgs.forEach((img) => {
-        img.src = 'ogura-tosuto.jpeg';
+        img.src = 'food-img/ogura-tosuto.jpeg';
         img.alt = '小倉トーストの画像';
         img.style.display = 'block';
       });
