@@ -96,18 +96,45 @@
         <span class="text2">レバー設定&nbsp;&emsp;レバー２&nbsp;&emsp;レバー３&nbsp;&emsp;レバー４&nbsp;&emsp;レバー５</span>
       </div>
       <span class="lever-container">
-        <button type="button" class="lever-1">伸縮</button>
-        <button type="button" class="lever-2">S</button>
-        <button type="button" class="lever-3">M</button>
-        <button type="button" class="lever-4">起伏</button>
+        <span class="lever-settings">
+          <div style="text-align: center">
+            <select id="lever-list-1" class="choice">
+              <option value="">未選択</option>
+            </select>
+            <select id="lever-list-2" class="choice">
+              <option value="">未選択</option>
+            </select>
+            <select id="lever-list-3" class="choice">
+              <option value="">未選択</option>
+            </select>
+            <select id="lever-list-4" class="choice">
+              <option value="">未選択</option>
+            </select>
+          </div>
+        </span>
       </span>
       <div class="panel-containerlast">
         <span class="text2">ペダル設定&nbsp;&emsp;ペダルA&nbsp;&emsp;ペダルB&nbsp;&emsp;ペダルC</span>
       </div>
       <span class="pedal-container">
-        <button type="button" class="pedal-1">伸縮</button>
-        <button type="button" class="pedal-2">S</button>
-        <button type="button" class="pedal-3">未選択</button>
+        <input type="text" list="pedal-list" class="dropdown-pedal">
+        <datalist id="pedal-list">
+          <option selected value="伸縮">
+          <option value="S">
+          <option value="未選択">
+        </datalist>
+        <input type="text" list="pedal-list" class="dropdown-pedal">
+        <datalist id="pedal-list">
+          <option selected value="伸縮">
+          <option value="S">
+          <option value="未選択">
+        </datalist>
+        <input type="text" list="pedal-list" class="dropdown-pedal">
+        <datalist id="pedal-list">
+          <option selected value="伸縮">
+          <option value="S">
+          <option value="未選択">
+        </datalist>
       </span>
       <div class="save-box">
         <button type="button" class="save-settings">カスタム設定を編集</button>

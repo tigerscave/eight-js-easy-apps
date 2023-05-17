@@ -135,6 +135,18 @@ button {
   margin-bottom: 1.9rem;
 }
 
+.lever-list {
+  display: flex;
+  margin-left: 10.2rem;
+}
+
+.choice {
+  margin-left: 1.2rem;
+  margin-right: 0.7rem;
+  width: 6.2rem;
+  height: 2.3rem;
+}
+
 .pedal-container {
   font-size: 1rem;
   display: flex;
@@ -164,29 +176,26 @@ button {
   border: 1px solid black;
 }
 
-.lever-1,
-.lever-2,
-.lever-3,
-.lever-4 {
+.dropdown-lever{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 5.8rem;
   height: 2.3rem;
   margin-left: 1.2rem;
+  margin-right: 0.7rem;
   background: white;
   border: 1px solid black;
 }
 
-.pedal-1,
-.pedal-2,
-.pedal-3 {
+.dropdown-pedal {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 5.8rem;
   height: 2.3rem;
   margin-left: 1.2rem;
+  margin-right: 0.5rem;
   background: white;
   border: 1px solid black;
 }
@@ -227,10 +236,12 @@ button {
   justify-content: center;
   align-items: center;
 }
+/* 
 
-.settings-panel {
+#settings-panel {
   display: none;
 }
+*/
 
 .select-3:focus~.panel-container3,
 .select-3:focus~.lever-container,

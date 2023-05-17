@@ -32,7 +32,7 @@
       switchOffButton.classList.remove("clicked");
     }
   }
-// 黄色になっているcontainer（1、2、3とISO、タダノ、カスタム）
+  // 黄色になっているcontainer（1、2、3とISO、タダノ、カスタム）
   const selectContainerList = document.querySelectorAll(".select-container");
   for (let i = 0; i < selectContainerList.length; i++) {
     const selectContainer = selectContainerList[i];
@@ -56,13 +56,13 @@
       select3.classList.add("clicked");
     }
   }
-
-  function registerSwitchEvents(target) {
+  //アイドルボリュームと巻き過解除ボタンの挙動
+  function registerSwitchEvents(target) { //関数名の定義
     function resetColor() {
-      target.style.backgroundColor = 'white';
+      target.style.backgroundColor = 'white';//要素の背景色を白色にリセットする。
     }
-    target.addEventListener("mousedown", () => {
-      target.style.backgroundColor = 'yellow';
+    target.addEventListener("mousedown", () => {//mousedownイベントでクリックされている間だけ、実行される。
+      target.style.backgroundColor = 'yellow';//targetを引数として渡す。styleプロパティは、要素のスタイルを操作するプロパティ
     });
     target.addEventListener("mouseup", resetColor);
     target.addEventListener("mouseleave", resetColor);
@@ -104,11 +104,28 @@
     panelContainer.style.display = "block";//settings-panelをブロックで表示。
   });
 
-const saveSettingButton = document.querySelector('.save-settings');
-const settingsPanel = document.getElementById('settings-panel');
-saveSettingButton.addEventListener('click', function() {
-  settingsPanel.style.display = 'none';
-});
+  const saveSettingButton = document.querySelector('.save-settings');
+  const settingsPanel = document.getElementById('settings-panel');
+  saveSettingButton.addEventListener('click', function () {
+    settingsPanel.style.display = 'none';
+  });
 
+
+  const LeverChoice = [
+    { name: "伸縮" },
+    { name: "S" },
+    { name: "M" },
+    { name: "起伏" },
+  ];
+
+  const LeverSettings = document.querySelectorAll("[id^='lever-list']");
+
+  LeverSettings.forEach((select) => {
+    LeverChoice.forEach((choice) => {
+      let option = document.createElement("option");
+      option.text = choice.name;
+      select.appendChild(option);
+    });
+  });
 
 }
