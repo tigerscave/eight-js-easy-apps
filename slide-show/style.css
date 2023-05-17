@@ -1,0 +1,46 @@
+@charset "utf-8";
+h2 {
+  text-align: center;
+}
+main {
+  width: 440px;
+  margin: 0 auto;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.container {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+button {
+  all: unset;
+  width: 220px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.thumbnail {
+  cursor: pointer;
+  opacity: .4;
+}
+
+.active {
+  opacity: 1;
+}
+
+textarea {
+  width: 440px;
+}
+.save {
+  text-align: center;
+}
+
