@@ -31,7 +31,7 @@ removeItem（'キー'）値を削除できる。
   //ローカルストレージに保存する。
     localStorage.setItem('memo', text.value);
   });
-
+//ローカルストレージから削除する。
   clear.addEventListener('click', () => {
     if (confirm('本当に削除しますか?') === true) {
       text.value = '';
