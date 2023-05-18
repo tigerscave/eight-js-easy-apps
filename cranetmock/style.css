@@ -236,7 +236,7 @@ panel-containerlast {
   display: flex;
 }
 
-.edit-settings, .choice {
+.switch-on, .switch-off, .switch-up, .switch-down, .circle, .select-1, .select-2, .select-3, .edit-settings, .choice {
   cursor: pointer;
 }
 
