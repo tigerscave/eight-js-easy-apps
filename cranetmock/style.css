@@ -224,16 +224,23 @@ button {
   justify-content: center;
   align-items: center;
 }
-/* 
-
+ 
 #settings-panel {
   display: none;
 }
-*/
 
 .select-3:focus~.panel-container3,
 .select-3:focus~.lever-container,
 .select-3:focus~.pedal-container,
 panel-containerlast {
   display: flex;
+}
+
+.edit-settings, .choice {
+  cursor: pointer;
+}
+
+
+button:active {
+  transform: translateY(1px);
 }

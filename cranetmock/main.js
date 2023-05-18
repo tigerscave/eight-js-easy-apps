@@ -104,7 +104,7 @@
     panelContainer.style.display = "block";//settings-panelをブロックで表示。
   });
 
-
+  //レバー設定を押した時のプルダウン
   const LeverChoice = [
     { name: "伸縮" },
     { name: "S" },
@@ -122,6 +122,7 @@
     });
   });
 
+  //ペダ設定を押した時のプルダウン
   const PedalChoice = [
     { name: "伸縮" },
     { name: "S" },
@@ -137,21 +138,35 @@
     });
   });
 
+  //カスタム編集ボタンを使う宣言。edit-button
   const editButton = document.getElementById('edit-button');
-  // レバー設定ボタンが有効になる。
+
+  // レバー設定ボタン・ペダル設定ボタンが有効になる。
   editButton.addEventListener('click', () => {
     LeverSettings.forEach((select) => {
       select.removeAttribute('disabled');//属性.関数('属性名')
     });
-  });
-
-  // ペダル設定ボタンが有効になる。
-  editButton.addEventListener('click', () => {
     PedalSettings.forEach((select) => {
       select.removeAttribute('disabled');
     });
   });
 
+  //ローカルストレージにデータを保存する。
+  const settingsStorage = document.querySelectorAll('.choice');
+  editButton.addEventListener('click', () => {
+    settingsStorage.forEach(select => {
+      const selectedOption = select.options[select.selectedIndex];
+      const selectedValue = selectedOption.value;
+      localStorage.setItem(select.id, selectedValue);
+    });
+  });
+
+  settingsStorage.forEach(select => {
+    const savedValue = localStorage.getItem(select.id);
+    if (savedValue) {
+      select.value = savedValue;
+    }
+  });
 
 
 
