@@ -98,16 +98,16 @@
       <span class="lever-container">
         <span class="lever-settings">
           <div style="text-align: center">
-            <select id="lever-list-1" class="choice">
+            <select id="lever-list-1" class="choice" disabled>
               <option value="">未選択</option>
             </select>
-            <select id="lever-list-2" class="choice">
+            <select id="lever-list-2" class="choice" disabled>
               <option value="">未選択</option>
             </select>
-            <select id="lever-list-3" class="choice">
+            <select id="lever-list-3" class="choice" disabled>
               <option value="">未選択</option>
             </select>
-            <select id="lever-list-4" class="choice">
+            <select id="lever-list-4" class="choice" disabled>
               <option value="">未選択</option>
             </select>
           </div>
@@ -117,27 +117,18 @@
         <span class="text2">ペダル設定&nbsp;&emsp;ペダルA&nbsp;&emsp;ペダルB&nbsp;&emsp;ペダルC</span>
       </div>
       <span class="pedal-container">
-        <input type="text" list="pedal-list" class="dropdown-pedal">
-        <datalist id="pedal-list">
-          <option selected value="伸縮">
-          <option value="S">
-          <option value="未選択">
-        </datalist>
-        <input type="text" list="pedal-list" class="dropdown-pedal">
-        <datalist id="pedal-list">
-          <option selected value="伸縮">
-          <option value="S">
-          <option value="未選択">
-        </datalist>
-        <input type="text" list="pedal-list" class="dropdown-pedal">
-        <datalist id="pedal-list">
-          <option selected value="伸縮">
-          <option value="S">
-          <option value="未選択">
-        </datalist>
+        <select id="pedal-list-A" class="choice" disabled>
+          <option value="">未選択</option>
+        </select>
+        <select id="pedal-list-B" class="choice" disabled>
+          <option value="">未選択</option>
+        </select>
+        <select id="pedal-list-C" class="choice" disabled>
+          <option value="">未選択</option>
+        </select>
       </span>
       <div class="save-box">
-        <button type="button" class="save-settings">カスタム設定を編集</button>
+        <button type="button" class="edit-settings" id="edit-button">カスタム設定を編集</button>
       </div>
     </div>
   </div>

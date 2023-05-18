@@ -176,18 +176,6 @@ button {
   border: 1px solid black;
 }
 
-.dropdown-lever{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 5.8rem;
-  height: 2.3rem;
-  margin-left: 1.2rem;
-  margin-right: 0.7rem;
-  background: white;
-  border: 1px solid black;
-}
-
 .dropdown-pedal {
   display: flex;
   justify-content: center;
@@ -226,7 +214,7 @@ button {
   align-items: center;
 }
 
-.save-settings {
+.edit-settings {
   width: 11rem;
   height: 2.3rem;
   margin-top: 1.0rem;

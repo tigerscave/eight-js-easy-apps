@@ -104,12 +104,6 @@
     panelContainer.style.display = "block";//settings-panelをブロックで表示。
   });
 
-  const saveSettingButton = document.querySelector('.save-settings');
-  const settingsPanel = document.getElementById('settings-panel');
-  saveSettingButton.addEventListener('click', function () {
-    settingsPanel.style.display = 'none';
-  });
-
 
   const LeverChoice = [
     { name: "伸縮" },
@@ -127,5 +121,40 @@
       select.appendChild(option);
     });
   });
+
+  const PedalChoice = [
+    { name: "伸縮" },
+    { name: "S" },
+  ];
+
+  const PedalSettings = document.querySelectorAll("[id^='pedal-list']");
+
+  PedalSettings.forEach((select) => {
+    PedalChoice.forEach((choice) => {
+      let option = document.createElement("option");
+      option.text = choice.name;
+      select.appendChild(option);
+    });
+  });
+
+  const editButton = document.getElementById('edit-button');
+  // レバー設定ボタンが有効になる。
+  editButton.addEventListener('click', () => {
+    LeverSettings.forEach((select) => {
+      select.removeAttribute('disabled');//属性.関数('属性名')
+    });
+  });
+
+  // ペダル設定ボタンが有効になる。
+  editButton.addEventListener('click', () => {
+    PedalSettings.forEach((select) => {
+      select.removeAttribute('disabled');
+    });
+  });
+
+
+
+
+
 
 }
