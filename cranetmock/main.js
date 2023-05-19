@@ -85,22 +85,21 @@
   //ISOボタンを押した時の挙動
   const isoButton = document.getElementById("iso-button");
 
+  const panelContainer = document.getElementById("settings-panel");
+
   isoButton.addEventListener("click", () => {
-    const panelContainer = document.getElementById("settings-panel");
     panelContainer.style.display = "none";//settings-panelを消す。
   });
   //タダノボタンを押した時の挙動
   const tadanoButton = document.getElementById('tadano-button');
 
   tadanoButton.addEventListener('click', () => {
-    const panelContainer = document.getElementById('settings-panel');
     panelContainer.style.display = 'none';//settings-panelを消す。
   })
   //カスタムボタンを押した時の挙動
   const customButton = document.getElementById("custom-button");
 
   customButton.addEventListener("click", () => {
-    const panelContainer = document.getElementById("settings-panel");
     panelContainer.style.display = "block";//settings-panelをブロックで表示。
   });
 
@@ -139,17 +138,35 @@
   });
 
   //カスタム編集ボタンを使う宣言。edit-button
-  const editButton = document.getElementById('edit-button');
-
+const editButton = document.getElementById('edit-button');
+let isDisable = "yes"
   // レバー設定ボタン・ペダル設定ボタンが有効になる。
-  editButton.addEventListener('click', () => {
+editButton.addEventListener('click', () => {
+
+  if (isDisable == 'yes') {
     LeverSettings.forEach((select) => {
       select.removeAttribute('disabled');//属性.関数('属性名')
     });
     PedalSettings.forEach((select) => {
       select.removeAttribute('disabled');
     });
+
+    editButton.textContent = 'カスタム設定を保存';
+    isDisable = 'no'
+  } else {
+    LeverSettings.forEach((select) => {
+      select.setAttribute('disabled', null);//属性.関数('属性名')
+    });
+    PedalSettings.forEach((select) => {
+      select.setAttribute('disabled', null);
+    });
+
+    editButton.textContent = 'カスタム設定を編集';
+    isDisable = 'yes'
+  }
+  
   });
+  
 
   //ローカルストレージにデータを保存する。
   const settingsStorage = document.querySelectorAll('.choice');
@@ -168,14 +185,7 @@
     }
   });
 
-  //カスタム設定を編集⇔保存を切り替える挙動
-  editButton.addEventListener('click', () => {
-    if (editButton.textContent === 'カスタム設定を保存') {
-      editButton.textContent = 'カスタム設定を編集';
-    } else {
-      editButton.textContent = 'カスタム設定を保存';
-    }
-  });
+
 
 
 
