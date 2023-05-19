@@ -168,8 +168,28 @@
     }
   });
 
+  //カスタム設定を編集⇔保存を切り替える挙動
+  editButton.addEventListener('click', () => {
+    if (editButton.textContent === 'カスタム設定を保存') {
+      editButton.textContent = 'カスタム設定を編集';
+    } else {
+      editButton.textContent = 'カスタム設定を保存';
+    }
+  });
+
+
+
+
+
+
 
 
 
 
 }
+
+
+
+
+
+
