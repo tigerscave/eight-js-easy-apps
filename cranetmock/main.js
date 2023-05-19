@@ -32,7 +32,7 @@
       switchOffButton.classList.remove("clicked");
     }
   }
-// 黄色になっているcontainer（1、2、3とISO、タダノ、カスタム）
+  // 黄色になっているcontainer（1、2、3とISO、タダノ、カスタム）
   const selectContainerList = document.querySelectorAll(".select-container");
   for (let i = 0; i < selectContainerList.length; i++) {
     const selectContainer = selectContainerList[i];
@@ -56,13 +56,13 @@
       select3.classList.add("clicked");
     }
   }
-
-  function registerSwitchEvents(target) {
+  //アイドルボリュームと巻き過解除ボタンの挙動
+  function registerSwitchEvents(target) { //関数名の定義
     function resetColor() {
-      target.style.backgroundColor = 'white';
+      target.style.backgroundColor = 'white';//要素の背景色を白色にリセットする。
     }
-    target.addEventListener("mousedown", () => {
-      target.style.backgroundColor = 'yellow';
+    target.addEventListener("mousedown", () => {//mousedownイベントでクリックされている間だけ、実行される。
+      target.style.backgroundColor = 'yellow';//targetを引数として渡す。styleプロパティは、要素のスタイルを操作するプロパティ
     });
     target.addEventListener("mouseup", resetColor);
     target.addEventListener("mouseleave", resetColor);
@@ -85,30 +85,107 @@
   //ISOボタンを押した時の挙動
   const isoButton = document.getElementById("iso-button");
 
+  const panelContainer = document.getElementById("settings-panel");
+
   isoButton.addEventListener("click", () => {
-    const panelContainer = document.getElementById("settings-panel");
     panelContainer.style.display = "none";//settings-panelを消す。
   });
   //タダノボタンを押した時の挙動
   const tadanoButton = document.getElementById('tadano-button');
 
   tadanoButton.addEventListener('click', () => {
-    const panelContainer = document.getElementById('settings-panel');
     panelContainer.style.display = 'none';//settings-panelを消す。
   })
   //カスタムボタンを押した時の挙動
   const customButton = document.getElementById("custom-button");
 
   customButton.addEventListener("click", () => {
-    const panelContainer = document.getElementById("settings-panel");
     panelContainer.style.display = "block";//settings-panelをブロックで表示。
   });
 
-const saveSettingButton = document.querySelector('.save-settings');
-const settingsPanel = document.getElementById('settings-panel');
-saveSettingButton.addEventListener('click', function() {
-  settingsPanel.style.display = 'none';
-});
+  //レバー設定を押した時のプルダウン
+  const leverChoice = [
+    { name: "伸縮" },
+    { name: "S" },
+    { name: "M" },
+    { name: "起伏" },
+  ];
 
+  const leverSettings = document.querySelectorAll("[id^='lever-list']");
 
+  leverSettings.forEach((select) => {
+    leverChoice.forEach((choice) => {
+      let option = document.createElement("option");
+      option.text = choice.name;
+      select.appendChild(option);
+    });
+  });
+
+  //ペダ設定を押した時のプルダウン
+  const pedalChoice = [
+    { name: "伸縮" },
+    { name: "S" },
+  ];
+
+  const pedalSettings = document.querySelectorAll("[id^='pedal-list']");
+
+  pedalSettings.forEach((select) => {
+    pedalChoice.forEach((choice) => {
+      let option = document.createElement("option");
+      option.text = choice.name;
+      select.appendChild(option);
+    });
+  });
+
+  //カスタム編集ボタンを使う宣言。edit-button
+  const editButton = document.getElementById('edit-button');
+  let isDisable = "yes"
+  // レバー設定ボタン・ペダル設定ボタンが有効になる。
+  editButton.addEventListener('click', () => {
+
+    if (isDisable == 'yes') {
+      leverSettings.forEach((select) => {
+        select.removeAttribute('disabled');//属性.関数('属性名')
+      });
+      pedalSettings.forEach((select) => {
+        select.removeAttribute('disabled');
+      });
+
+      editButton.textContent = 'カスタム設定を保存';
+      isDisable = 'no'
+    } else {
+      leverSettings.forEach((select) => {
+        select.setAttribute('disabled', null);//属性.関数('属性名')
+      });
+      pedalSettings.forEach((select) => {
+        select.setAttribute('disabled', null);
+      });
+
+      editButton.textContent = 'カスタム設定を編集';
+      isDisable = 'yes'
+    }
+  });
+
+  //ローカルストレージにデータを保存する。
+  const settingsStorage = document.querySelectorAll('.choice');
+  editButton.addEventListener('click', () => {
+    settingsStorage.forEach(select => {
+      const selectedOption = select.options[select.selectedIndex];
+      const selectedValue = selectedOption.value;
+      localStorage.setItem(select.id, selectedValue);
+    });
+  });
+
+  settingsStorage.forEach(select => {
+    const savedValue = localStorage.getItem(select.id);
+    if (savedValue) {
+      select.value = savedValue;
+    }
+  });
 }
+
+
+
+
+
+

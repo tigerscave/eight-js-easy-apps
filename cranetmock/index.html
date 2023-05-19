@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design mock</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -22,7 +21,6 @@
           <button type="button" class="switch-off">OFF</button>
         </span>
       </div>
-
       <div class="control-container">
         アイドル&shy;ボリューム
         <span class="switch-container-SP">
@@ -30,7 +28,6 @@
           <button type="button" class="switch-down">↓</button>
         </span>
       </div>
-
       <div id="rotation-free-button" class="control-container">
         旋回フリー
         <span class="switch-container">
@@ -38,7 +35,6 @@
           <button type="button" class="switch-off">OFF</button>
         </span>
       </div>
-
       <div class="control-container">
         ストップ&shy;スイッチ
         <span class="switch-container">
@@ -46,7 +42,6 @@
           <button type="button" class="switch-off">OFF</button>
         </span>
       </div>
-
       <div class="control-container">
         M高速巻下
         <span class="switch-container">
@@ -54,7 +49,6 @@
           <button type="button" class="switch-off">OFF</button>
         </span>
       </div>
-
       <div class="control-container">
         AML解除
         <span class="switch-container">
@@ -62,7 +56,6 @@
           <button type="button" class="switch-off">OFF</button>
         </span>
       </div>
-
       <div class="control-container">
         S高速巻下
         <span class="switch-container">
@@ -70,7 +63,6 @@
           <button type="button" class="switch-off">OFF</button>
         </span>
       </div>
-
       <div class="control-container">
         巻き過&nbsp;&emsp;解除
         <div class="circle"><span>解除</span></div>
@@ -96,21 +88,39 @@
         <span class="text2">レバー設定&nbsp;&emsp;レバー２&nbsp;&emsp;レバー３&nbsp;&emsp;レバー４&nbsp;&emsp;レバー５</span>
       </div>
       <span class="lever-container">
-        <button type="button" class="lever-1">伸縮</button>
-        <button type="button" class="lever-2">S</button>
-        <button type="button" class="lever-3">M</button>
-        <button type="button" class="lever-4">起伏</button>
+        <span class="lever-settings">
+          <div style="text-align: center">
+            <select id="lever-list-1" class="choice" disabled>
+              <option value="">未選択</option>
+            </select>
+            <select id="lever-list-2" class="choice" disabled>
+              <option value="">未選択</option>
+            </select>
+            <select id="lever-list-3" class="choice" disabled>
+              <option value="">未選択</option>
+            </select>
+            <select id="lever-list-4" class="choice" disabled>
+              <option value="">未選択</option>
+            </select>
+          </div>
+        </span>
       </span>
       <div class="panel-containerlast">
         <span class="text2">ペダル設定&nbsp;&emsp;ペダルA&nbsp;&emsp;ペダルB&nbsp;&emsp;ペダルC</span>
       </div>
       <span class="pedal-container">
-        <button type="button" class="pedal-1">伸縮</button>
-        <button type="button" class="pedal-2">S</button>
-        <button type="button" class="pedal-3">未選択</button>
+        <select id="pedal-list-A" class="choice" disabled>
+          <option value="">未選択</option>
+        </select>
+        <select id="pedal-list-B" class="choice" disabled>
+          <option value="">未選択</option>
+        </select>
+        <select id="pedal-list-C" class="choice" disabled>
+          <option value="">未選択</option>
+        </select>
       </span>
       <div class="save-box">
-        <button type="button" class="save-settings">カスタム設定を編集</button>
+        <button type="button" class="edit-settings" id="edit-button">カスタム設定を編集</button>
       </div>
     </div>
   </div>
