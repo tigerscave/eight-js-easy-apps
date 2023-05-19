@@ -184,18 +184,6 @@
       select.value = savedValue;
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
