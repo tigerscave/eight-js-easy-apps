@@ -104,17 +104,17 @@
   });
 
   //レバー設定を押した時のプルダウン
-  const LeverChoice = [
+  const leverChoice = [
     { name: "伸縮" },
     { name: "S" },
     { name: "M" },
     { name: "起伏" },
   ];
 
-  const LeverSettings = document.querySelectorAll("[id^='lever-list']");
+  const leverSettings = document.querySelectorAll("[id^='lever-list']");
 
-  LeverSettings.forEach((select) => {
-    LeverChoice.forEach((choice) => {
+  leverSettings.forEach((select) => {
+    leverChoice.forEach((choice) => {
       let option = document.createElement("option");
       option.text = choice.name;
       select.appendChild(option);
@@ -127,9 +127,9 @@
     { name: "S" },
   ];
 
-  const PedalSettings = document.querySelectorAll("[id^='pedal-list']");
+  const pedalSettings = document.querySelectorAll("[id^='pedal-list']");
 
-  PedalSettings.forEach((select) => {
+  pedalSettings.forEach((select) => {
     PedalChoice.forEach((choice) => {
       let option = document.createElement("option");
       option.text = choice.name;
@@ -138,35 +138,35 @@
   });
 
   //カスタム編集ボタンを使う宣言。edit-button
-const editButton = document.getElementById('edit-button');
-let isDisable = "yes"
+  const editButton = document.getElementById('edit-button');
+  let isDisable = "yes"
   // レバー設定ボタン・ペダル設定ボタンが有効になる。
-editButton.addEventListener('click', () => {
+  editButton.addEventListener('click', () => {
 
-  if (isDisable == 'yes') {
-    LeverSettings.forEach((select) => {
-      select.removeAttribute('disabled');//属性.関数('属性名')
-    });
-    PedalSettings.forEach((select) => {
-      select.removeAttribute('disabled');
-    });
+    if (isDisable == 'yes') {
+      leverSettings.forEach((select) => {
+        select.removeAttribute('disabled');//属性.関数('属性名')
+      });
+      pedalSettings.forEach((select) => {
+        select.removeAttribute('disabled');
+      });
 
-    editButton.textContent = 'カスタム設定を保存';
-    isDisable = 'no'
-  } else {
-    LeverSettings.forEach((select) => {
-      select.setAttribute('disabled', null);//属性.関数('属性名')
-    });
-    PedalSettings.forEach((select) => {
-      select.setAttribute('disabled', null);
-    });
+      editButton.textContent = 'カスタム設定を保存';
+      isDisable = 'no'
+    } else {
+      leverSettings.forEach((select) => {
+        select.setAttribute('disabled', null);//属性.関数('属性名')
+      });
+      pedalSettings.forEach((select) => {
+        select.setAttribute('disabled', null);
+      });
 
-    editButton.textContent = 'カスタム設定を編集';
-    isDisable = 'yes'
-  }
-  
+      editButton.textContent = 'カスタム設定を編集';
+      isDisable = 'yes'
+    }
+
   });
-  
+
 
   //ローカルストレージにデータを保存する。
   const settingsStorage = document.querySelectorAll('.choice');
