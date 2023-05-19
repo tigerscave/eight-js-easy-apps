@@ -122,7 +122,7 @@
   });
 
   //ペダ設定を押した時のプルダウン
-  const PedalChoice = [
+  const pedalChoice = [
     { name: "伸縮" },
     { name: "S" },
   ];
@@ -130,7 +130,7 @@
   const pedalSettings = document.querySelectorAll("[id^='pedal-list']");
 
   pedalSettings.forEach((select) => {
-    PedalChoice.forEach((choice) => {
+    pedalChoice.forEach((choice) => {
       let option = document.createElement("option");
       option.text = choice.name;
       select.appendChild(option);
@@ -164,9 +164,7 @@
       editButton.textContent = 'カスタム設定を編集';
       isDisable = 'yes'
     }
-
   });
-
 
   //ローカルストレージにデータを保存する。
   const settingsStorage = document.querySelectorAll('.choice');
