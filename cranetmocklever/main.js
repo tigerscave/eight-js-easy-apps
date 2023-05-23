@@ -39,11 +39,11 @@ leverList4.value = leverList4Value
 leverList5.value = leverList5Value
 
 leverList2.addEventListener('change', event => {
-  localStorage.setItem('lever-list-2', event.target.value);
   if(event.target.value === leverList3.value || event.target.value === leverList4.value || event.target.value === leverList5.value) {
     editButton.setAttribute('disabled', null)
   } else {
     editButton.removeAttribute('disabled')
+    localStorage.setItem('lever-list-2', event.target.value);
   }
 })
 
@@ -52,8 +52,8 @@ leverList3.addEventListener('change', event => {
     editButton.setAttribute('disabled', null)
   } else {
     editButton.removeAttribute('disabled')
+    localStorage.setItem(event.target.id, event.target.value);
   }
-  localStorage.setItem(event.target.id, event.target.value);
 })
 
 leverList4.addEventListener('change', event => {
@@ -61,8 +61,9 @@ leverList4.addEventListener('change', event => {
     editButton.setAttribute('disabled', null)
   } else {
     editButton.removeAttribute('disabled')
+    localStorage.setItem(event.target.id, event.target.value);
   }
-  localStorage.setItem(event.target.id, event.target.value);
+
 })
 
 leverList5.addEventListener('change', event => {
@@ -70,8 +71,9 @@ leverList5.addEventListener('change', event => {
     editButton.setAttribute('disabled', null)
   } else {
     editButton.removeAttribute('disabled')
+    localStorage.setItem(event.target.id, event.target.value);
   }
-  localStorage.setItem(event.target.id, event.target.value);
+ 
 })
 
 if (leverList2Value === '未選択' && leverList3Value === '未選択' && leverList4Value === '未選択' && leverList5Value === '未選択')  {
