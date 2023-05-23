@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-button {
-  padding: 0;
-}
 
 .panel {
   margin-bottom: 0.5em;
@@ -12,128 +9,6 @@ button {
   width: 7.5in;
   height: 4.1in;
 }
-
-.panel-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.panel-container2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 3.3rem;
-}
-
-.panel-container3 {
-  display: flex;
-}
-
-.text {
-  margin-left: 3.4rem;
-  margin-bottom: 3.3rem;
-}
-
-.control-container {
-
-  margin-top: 1.8em;
-  margin-left: 1.5em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.text2 {
-  font-size: 1rem;
-  margin-left: 3em;
-  word-spacing: 3.1em;
-}
-
-
-
-.circle {
-  position: absolute;
-  left: 39rem;
-  width: 60px;
-  height: 60px;
-  background: white;
-  border: 1px solid black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle span {
-  writing-mode: vertical-rl;
-  color: black;
-}
-
-.switch-container {
-  margin-right: 6%;
-  font-size: 1rem;
-  display: flex;
-}
-
-.switch-container-ON {
-  margin-right: 6%;
-  font-size: 1rem;
-  display: flex;
-}
-
-.switch-container-SP {
-  margin-right: 6%;
-  font-size: 1rem;
-  display: flex;
-}
-
-.switch-on,
-.switch-off {
-  width: 4.6rem;
-  height: 2.3rem;
-  margin: 0;
-  background: white;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.switch-up,
-.switch-down {
-  width: 4.6rem;
-  height: 2.3rem;
-  margin: 0;
-  background: white;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.switch-on+.switch-off {
-  margin-left: 0;
-}
-
-.select-container {
-  font-size: 1rem;
-  display: flex;
-  margin-left: 3.4rem;
-}
-
-.lever-container {
-  font-size: 1rem;
-  display: flex;
-  margin-left: 10.2rem;
-  margin-top: 0.8rem;
-  margin-bottom: 1.9rem;
-}
-
-.lever-list {
-  display: flex;
-  margin-left: 10.2rem;
-}
-
-
 
 .pedal-container {
   font-size: 1rem;
@@ -219,15 +94,6 @@ button {
 panel-containerlast {
   display: flex;
 }
-
-.switch-on, .switch-off, .switch-up, .switch-down, .circle, .select-1, .select-2, .select-3, .edit-settings, .choice {
-  cursor: pointer;
-}
-
-button:active {
-  transform: translateY(1px);
-}
-
 
 
 .group-section {

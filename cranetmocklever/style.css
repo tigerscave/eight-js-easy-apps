@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+
+.panel {
+  margin-bottom: 0.5em;
+  border: 1px solid black;
+  padding: 1.2em 1.2em 2.4em;
+  background: #e7eaeb;
+  width: 7.5in;
+  height: 2.1in;
+}
+
+.group-section {
+  display: flex;
+  justify-content: space-between;
+}
+/* .group-option {
+  display: block;
+} */
+
+.groups-select-item {
+  width: 6.2rem;
+  height: 2.3rem;
+}
+
+.save-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-settings {
+  width: 11rem;
+  height: 2.3rem;
+  margin-top: 1.0rem;
+  background: white;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
