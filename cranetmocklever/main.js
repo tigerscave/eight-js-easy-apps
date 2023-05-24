@@ -76,8 +76,8 @@ const saveToLocalstorage = (event, lever1, lever2, lever3) => {
   }
 }
 
-const disableSaveButton = () => {
-  if (editButton.textContent === 'カスタム設定を保存' && value === "未選択") {
+editButton.addEventListener = ('change', () => {
+  if (editButton.textContent === 'カスタム設定を保存' && leverList2Value === '未選択' && leverList3Value === '未選択' && leverList4Value === '未選択' && leverList5Value === '未選択') {
     editButton.setAttribute('disabled', '');
   }
-};
+});
