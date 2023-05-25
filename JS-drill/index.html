@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSドリル</title>
+</head>
+
+<body>
+  <h1>JSの練習</h1>
+
+  <script>
+    // (1)
+    for (let i = 0; i < 5; i++) {
+      let f1 = "*".repeat(5);
+      console.log(f1);
+    }
+    // (2)
+    for (let i = 0; i <= 5; i++) {
+      let f1 = "";
+      for (let s2 = 0; s2 < i; s2++) {
+        f1 += "*";
+      }
+      console.log(f1);
+    }
+    // (3)
+    for (let i = 0; i < 5; i++) {
+      let f1 = " ".repeat(i) + "*".repeat(5);
+      console.log(f1);
+    }
+    // (4)
+    for (let i = 0; i < 5; i++) {
+      let spaces = " ".repeat(5 - i);
+      let f1 = spaces + "*".repeat(5);
+      console.log(f1);
+    }
+    // (5)
+    for (let i = 0; i < 5; i++) {
+      let spaces = " ".repeat(5 - i);
+      let stars = "*".repeat(i + 1);
+      console.log(spaces + stars);
+    }
+  
+  </script>
+</body>
+
+</html>

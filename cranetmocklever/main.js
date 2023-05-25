@@ -32,11 +32,9 @@ leverList4.addEventListener('change', checkSelection);
 leverList5.addEventListener('change', checkSelection);
 
 function checkSelection() {
-  if (leverList2.value === '未選択' || leverList3.value === '未選択' || leverList4.value === '未選択' || leverList5.value === '未選択') {
+  if (leverList2.value === '未選択' || leverList3.value === '未選択' || leverList4.value === '未選択' || leverList5.value === '未選択' || leverList2.value === leverList3 || leverList2.value === leverList4 || leverList2.value === leverList5 || leverList3.value === leverList4 || leverList3.value === leverList5 || leverList4.value === leverList5.value) {
     editButton.setAttribute('disabled', '');
   } else {
     editButton.removeAttribute('disabled');
   }
 }
-
-
