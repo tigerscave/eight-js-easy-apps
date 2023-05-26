@@ -1,13 +1,16 @@
 'use strict'
 
 const editButton = document.getElementById('edit-button');
+
+const pedalListA = document.getElementById('pedal-list-A')
+const pedalListB = document.getElementById('pedal-list-B')
+const pedalListC = document.getElementById('pedal-list-C')
+
 const groupSelectItems = document.querySelectorAll(".groups-select-item")
 
-//カスタム編集ボタンを使う宣言。edit-button
+//カスタム設定を編集⇔保存の文字切り替え
 let isDisable = true
-// レバー設定ボタン・ペダル設定ボタンが有効になる。
 editButton.addEventListener('click', () => {
-  console.log('__clicked___')
   if(isDisable) {
     groupSelectItems.forEach(item => {
       item.removeAttribute('disabled')
@@ -23,29 +26,26 @@ editButton.addEventListener('click', () => {
   }
 });
 
-const padelListA = document.getElementById('pedal-list-A')
-const padelListB = document.getElementById('pedal-list-B')
-const padelListC = document.getElementById('pedal-list-C')
+//各項目のプルダウンについて、イベントを付与する
+const pedalListAValue = localStorage.getItem('pedal-list-A')
+const pedalListBValue = localStorage.getItem('pedal-list-B')
+const pedalListCValue = localStorage.getItem('pedal-list-C')
 
-const padelListAValue = localStorage.getItem('pedal-list-A')
-const padelListBValue = localStorage.getItem('pedal-list-B')
-const padelListCValue = localStorage.getItem('pedal-list-C')
+pedalListA.value = pedalListAValue
+pedalListB.value = pedalListBValue
+pedalListC.value = pedalListCValue
 
-padelListA.value = padelListAValue
-padelListB.value = padelListBValue
-padelListC.value = padelListCValue
-
-padelListA.addEventListener('change', event => {
+pedalListA.addEventListener('change', event => {
   localStorage.setItem('pedal-list-A', event.target.value);
-  if(event.target.value === padelListC.value || event.target.value === padelListB.value){
+  if(event.target.value === pedalListC.value === 'S'|| '伸縮' || event.target.value === pedalListB.value === 'S'|| '伸縮'){
     editButton.setAttribute('disabled', null)
   } else {
     editButton.removeAttribute('disabled')
   }
 })
 
-padelListB.addEventListener('change', event => {
-  if(event.target.value === padelListA.value || event.target.value === padelListC.value){
+pedalListB.addEventListener('change', event => {
+  if(event.target.value === pedalListA.value === 'S'|| '伸縮' || event.target.value === pedalListC.value === 'S'|| '伸縮'){
     editButton.setAttribute('disabled', null)
   } else {
     editButton.removeAttribute('disabled')
@@ -53,14 +53,25 @@ padelListB.addEventListener('change', event => {
   localStorage.setItem(event.target.id, event.target.value);
 })
 
-padelListC.addEventListener('change', event => {
-  if(event.target.value === padelListA.value || event.target.value === padelListB.value){
+pedalListC.addEventListener('change', event => {
+  if(event.target.value === pedalListA.value === 'S'|| '伸縮' || event.target.value === pedalListB.value === 'S'|| '伸縮'){
     editButton.setAttribute('disabled', null)
   } else {
     editButton.removeAttribute('disabled')
   }
   localStorage.setItem(event.target.id, event.target.value);
 })
+
+// 各項目のプルダウンについて、初期値を未選択とする。
+pedalListA.value = pedalListAValue || '未選択'; 
+pedalListB.value = pedalListBValue || '未選択'; 
+pedalListC.value = pedalListCValue || '未選択'; 
+
+
+
+
+
+
 
 
 
