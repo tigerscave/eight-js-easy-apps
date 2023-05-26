@@ -26,52 +26,49 @@ editButton.addEventListener('click', () => {
   }
 });
 
-//各項目のプルダウンについて、イベントを付与する
-const pedalListAValue = localStorage.getItem('pedal-list-A')
-const pedalListBValue = localStorage.getItem('pedal-list-B')
-const pedalListCValue = localStorage.getItem('pedal-list-C')
+// 各項目のプルダウンについて、イベントを付与する
+const pedalListAValue = localStorage.getItem('pedal-list-A');
+const pedalListBValue = localStorage.getItem('pedal-list-B');
+const pedalListCValue = localStorage.getItem('pedal-list-C');
 
-pedalListA.value = pedalListAValue
-pedalListB.value = pedalListBValue
-pedalListC.value = pedalListCValue
+// 初期値の設定
+pedalListA.value = pedalListAValue || "未選択";
+pedalListB.value = pedalListBValue || "未選択";
+pedalListC.value = pedalListCValue || "未選択";
 
+// イベントリスナーの追加
 pedalListA.addEventListener('change', event => {
   localStorage.setItem('pedal-list-A', event.target.value);
-  if(event.target.value === pedalListC.value === 'S'|| '伸縮' || event.target.value === pedalListB.value === 'S'|| '伸縮'){
-    editButton.setAttribute('disabled', null)
+  if (
+    (event.target.value === 'S' || event.target.value === '伸縮') &&
+    (pedalListB.value === 'S' || pedalListB.value === '伸縮' || pedalListC.value === 'S' || pedalListC.value === '伸縮')
+  ) {
+    editButton.setAttribute('disabled', '');
   } else {
-    editButton.removeAttribute('disabled')
+    editButton.removeAttribute('disabled');
   }
-})
+});
 
 pedalListB.addEventListener('change', event => {
-  if(event.target.value === pedalListA.value === 'S'|| '伸縮' || event.target.value === pedalListC.value === 'S'|| '伸縮'){
-    editButton.setAttribute('disabled', null)
-  } else {
-    editButton.removeAttribute('disabled')
-  }
   localStorage.setItem(event.target.id, event.target.value);
-})
+  if (
+    (event.target.value === 'S' || event.target.value === '伸縮') &&
+    (pedalListA.value === 'S' || pedalListA.value === '伸縮' || pedalListC.value === 'S' || pedalListC.value === '伸縮')
+  ) {
+    editButton.setAttribute('disabled', '');
+  } else {
+    editButton.removeAttribute('disabled');
+  }
+});
 
 pedalListC.addEventListener('change', event => {
-  if(event.target.value === pedalListA.value === 'S'|| '伸縮' || event.target.value === pedalListB.value === 'S'|| '伸縮'){
-    editButton.setAttribute('disabled', null)
-  } else {
-    editButton.removeAttribute('disabled')
-  }
   localStorage.setItem(event.target.id, event.target.value);
-})
-
-// 各項目のプルダウンについて、初期値を未選択とする。
-pedalListA.value = pedalListAValue || '未選択'; 
-pedalListB.value = pedalListBValue || '未選択'; 
-pedalListC.value = pedalListCValue || '未選択'; 
-
-
-
-
-
-
-
-
-
+  if (
+    (event.target.value === 'S' || event.target.value === '伸縮') &&
+    (pedalListA.value === 'S' || pedalListA.value === '伸縮' || pedalListB.value === 'S' || pedalListB.value === '伸縮')
+  ) {
+    editButton.setAttribute('disabled', '');
+  } else {
+    editButton.removeAttribute('disabled');
+  }
+});
