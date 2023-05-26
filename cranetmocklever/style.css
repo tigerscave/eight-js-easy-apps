@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 
-.panel {
+.settings-panel {
   margin-bottom: 0.5em;
   border: 1px solid black;
   padding: 1.2em 1.2em 2.4em;
@@ -14,9 +14,6 @@
   display: flex;
   justify-content: space-between;
 }
-/* .group-option {
-  display: block;
-} */
 
 .groups-select-item {
   width: 6.2rem;

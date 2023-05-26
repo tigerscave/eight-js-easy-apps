@@ -100,5 +100,5 @@ tadanoButton.addEventListener('click', () => {
 const customButton = document.getElementById("custom-button");
 
 customButton.addEventListener("click", () => {
-  panelContainer.style.display = "flex";
+  panelContainer.style.display = "block";
 });
