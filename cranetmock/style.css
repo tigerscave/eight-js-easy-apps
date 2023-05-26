@@ -41,21 +41,12 @@ button {
 }
 
 .control-container {
-
   margin-top: 1.8em;
   margin-left: 1.5em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.text2 {
-  font-size: 1rem;
-  margin-left: 3em;
-  word-spacing: 3.1em;
-}
-
-
 
 .circle {
   position: absolute;
@@ -81,20 +72,14 @@ button {
   display: flex;
 }
 
-.switch-container-ON {
+.switch-container-ON, .switch-container-SP {
   margin-right: 6%;
   font-size: 1rem;
   display: flex;
 }
 
-.switch-container-SP {
-  margin-right: 6%;
-  font-size: 1rem;
-  display: flex;
-}
-
-.switch-on,
-.switch-off {
+.switch-on,.switch-off,.switch-up,
+.switch-down  {
   width: 4.6rem;
   height: 2.3rem;
   margin: 0;
@@ -103,22 +88,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.switch-up,
-.switch-down {
-  width: 4.6rem;
-  height: 2.3rem;
-  margin: 0;
-  background: white;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.switch-on+.switch-off {
-  margin-left: 0;
 }
 
 .select-container {
@@ -127,45 +96,7 @@ button {
   margin-left: 3.4rem;
 }
 
-.lever-container {
-  font-size: 1rem;
-  display: flex;
-  margin-left: 10.2rem;
-  margin-top: 0.8rem;
-  margin-bottom: 1.9rem;
-}
-
-.lever-list {
-  display: flex;
-  margin-left: 10.2rem;
-}
-
-.groups-select-item {
-  margin-left: 1.2rem;
-  margin-right: 0.7rem;
-  width: 6.2rem;
-  height: 2.3rem;
-}
-
-.pedal-container {
-  font-size: 1rem;
-  display: flex;
-  margin-left: 10.2rem;
-  margin-top: 0.8rem;
-  margin-bottom: 1.9rem;
-}
-
-.lever-container button {
-  margin-right: 1.5rem;
-}
-
-.pedal-container button {
-  margin-right: 1.3rem;
-}
-
-.select-1,
-.select-2,
-.select-3 {
+.select-1,.select-2,.select-3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,22 +107,6 @@ button {
   border: 1px solid black;
 }
 
-.dropdown-pedal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 5.8rem;
-  height: 2.3rem;
-  margin-left: 1.2rem;
-  margin-right: 0.5rem;
-  background: white;
-  border: 1px solid black;
-}
-
-.select-1+.select-2+.select-3 {
-  margin-left: 0;
-}
-
 .switch-on.clicked {
   background: red;
 }
@@ -200,15 +115,12 @@ button {
   background: blue;
 }
 
-.select-container>.clicked {
-  background: yellow;
-}
-
+.select-container>.clicked,
 .switch-container-SP>.clicked {
   background: yellow;
 }
 
-.save-box {
+.save-box,.edit-settings {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,29 +129,18 @@ button {
 .edit-settings {
   width: 11rem;
   height: 2.3rem;
-  margin-top: 1.0rem;
+  margin-top: 2.0rem;
   background: white;
   border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
  
 #settings-panel {
   display: none;
 }
 
-.select-3:focus~.panel-container3,
-.select-3:focus~.lever-container,
-.select-3:focus~.pedal-container,
-panel-containerlast {
-  display: flex;
-}
-
 .switch-on, .switch-off, .switch-up, .switch-down, .circle, .select-1, .select-2, .select-3, .edit-settings, .groups-select-item {
   cursor: pointer;
 }
-
 
 button:active {
   transform: translateY(1px);
