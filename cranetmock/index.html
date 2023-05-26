@@ -75,7 +75,6 @@
         <button type="button" class="select-2">2</button>
         <button type="button" class="select-3">3</button>
       </span>
-
       <span class="text">レバー・ペダル配列</span>
       <span class="select-container">
         <button type="button" id="iso-button" class="select-1">ISO</button>
@@ -83,50 +82,82 @@
         <button type="button" id="custom-button" class="select-3">カスタム</button>
       </span>
     </div>
-    <div id="settings-panel">
-      <div id="panel-container3" class="panel-container3">
-        <span class="text2">レバー設定&nbsp;&emsp;レバー２&nbsp;&emsp;レバー３&nbsp;&emsp;レバー４&nbsp;&emsp;レバー５</span>
+
+    <div class="group-section settings-panel" id="settings-panel">
+      <div>
+        <p>レバー設定</p>
       </div>
-      <span class="lever-container">
-        <span class="lever-settings">
-          <div style="text-align: center">
-            <select id="lever-list-1" class="choice" disabled>
-              <option value="">未選択</option>
-            </select>
-            <select id="lever-list-2" class="choice" disabled>
-              <option value="">未選択</option>
-            </select>
-            <select id="lever-list-3" class="choice" disabled>
-              <option value="">未選択</option>
-            </select>
-            <select id="lever-list-4" class="choice" disabled>
-              <option value="">未選択</option>
-            </select>
-          </div>
-        </span>
-      </span>
-      <div class="panel-containerlast">
+      <div>
+        <p>レバー２</p>
+        <select id="lever-list-2" class="groups-select-item" disabled>
+          <option value="未選択">未選択</option>
+          <option value="伸縮">伸縮</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="起伏">起伏</option>
+        </select>
+      </div>
+      <div>
+        <p>レバー３</p>
+        <select id="lever-list-3" class="groups-select-item" disabled>
+          <option value="">未選択</option>
+          <option value="伸縮">伸縮</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="起伏">起伏</option>
+        </select>
+      </div>
+      <div>
+        <p>レバー４</p>
+        <select id="lever-list-4" class="groups-select-item" disabled>
+          <option value="">未選択</option>
+          <option value="伸縮">伸縮</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="起伏">起伏</option>
+        </select>
+      </div>
+      <div>
+        <p>レバー５</p>
+        <select id="lever-list-5" class="groups-select-item" disabled>
+          <option value="">未選択</option>
+          <option value="伸縮">伸縮</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="起伏">起伏</option>
+        </select>
+      </div>
+    </div>
+    <!-- <div class="panel-containerlast">
         <span class="text2">ペダル設定&nbsp;&emsp;ペダルA&nbsp;&emsp;ペダルB&nbsp;&emsp;ペダルC</span>
       </div>
       <span class="pedal-container">
-        <select id="pedal-list-A" class="choice" disabled>
+        <select id="pedal-list-A" class="groups-select-item" disabled>
           <option value="">未選択</option>
+          <option value="s">S</option>
+          <option value="伸縮">伸縮</option>
         </select>
-        <select id="pedal-list-B" class="choice" disabled>
+        <select id="pedal-list-B" class="groups-select-item" disabled>
           <option value="">未選択</option>
+          <option value="s">S</option>
+          <option value="伸縮">伸縮</option>
         </select>
-        <select id="pedal-list-C" class="choice" disabled>
+        <select id="pedal-list-C" class="groups-select-item" disabled>
           <option value="">未選択</option>
+          <option value="s">S</option>
+          <option value="伸縮">伸縮</option>
         </select>
-      </span>
-      <div class="save-box">
-        <button type="button" class="edit-settings" id="edit-button">カスタム設定を編集</button>
-      </div>
+      </span> -->
+    <div class="save-box">
+      <button type="button" class="edit-settings" id="edit-button">カスタム設定を編集</button>
     </div>
   </div>
   </div>
+  </div>
+  
 
   <script type="text/javascript" src="main.js"></script>
+  <!--レバー設定とペダル設定のみを記述したJS-->
   <script type="text/javascript" src="lever-and-pedal.js"></script>
 </body>
 

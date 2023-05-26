@@ -140,7 +140,7 @@ button {
   margin-left: 10.2rem;
 }
 
-.choice {
+.groups-select-item {
   margin-left: 1.2rem;
   margin-right: 0.7rem;
   width: 6.2rem;
@@ -236,11 +236,20 @@ panel-containerlast {
   display: flex;
 }
 
-.switch-on, .switch-off, .switch-up, .switch-down, .circle, .select-1, .select-2, .select-3, .edit-settings, .choice {
+.switch-on, .switch-off, .switch-up, .switch-down, .circle, .select-1, .select-2, .select-3, .edit-settings, .groups-select-item {
   cursor: pointer;
 }
 
 
 button:active {
   transform: translateY(1px);
+}
+
+.group-section {
+  display: flex;
+  justify-content: space-between;
+}
+.groups-select-item {
+  width: 6.2rem;
+  height: 2.3rem;
 }
