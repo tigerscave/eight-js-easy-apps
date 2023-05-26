@@ -31,10 +31,47 @@ leverList3.addEventListener('change', checkSelection);
 leverList4.addEventListener('change', checkSelection);
 leverList5.addEventListener('change', checkSelection);
 
+
 function checkSelection() {
-  if (leverList2.value === '未選択' || leverList3.value === '未選択' || leverList4.value === '未選択' || leverList5.value === '未選択' || leverList2.value === leverList3 || leverList2.value === leverList4 || leverList2.value === leverList5 || leverList3.value === leverList4 || leverList3.value === leverList5 || leverList4.value === leverList5.value) {
+  const leverListArray = [leverList2, leverList3, leverList4, leverList5];
+  let hasUnselected = false;
+  let hasDuplicates = false;
+
+  for (let i = 0; i < leverListArray.length; i++) {
+    const currentSelection = leverListArray[i].value;
+
+    if (currentSelection === '未選択') {
+      hasUnselected = true;
+      break; //未選択がある場合、ループを終了
+    }
+
+    for (let j = i + 1; j < leverListArray.length; j++) {
+      if (currentSelection === leverListArray[j].value) {
+        hasDuplicates = true;
+        break;//重複がある場合、ループを終了
+      }
+    }
+    if (hasDuplicates) {
+      break;//重複がある場合、ループを終了
+    }
+  }
+  if (hasUnselected || hasDuplicates) {
     editButton.setAttribute('disabled', '');
   } else {
     editButton.removeAttribute('disabled');
   }
 }
+
+
+
+// 自分で書いたコードループさせられないため没コード
+
+// function checkSelection() {
+//   for (let i = 0; i < someValue; i++) {
+//     if (leverList2.value === '未選択' || leverList3.value === '未選択' || leverList4.value === '未選択' || leverList5.value === '未選択' || leverList2.value === leverList3 || leverList2.value === leverList4 || leverList2.value === leverList5 || leverList3.value === leverList4 || leverList3.value === leverList5 || leverList4.value === leverList5.value) {
+//       editButton.setAttribute('disabled', '');
+//     } else {
+//       editButton.removeAttribute('disabled');
+//     }
+//   }
+// }
