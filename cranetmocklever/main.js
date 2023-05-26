@@ -8,9 +8,8 @@ const leverList4 = document.getElementById('lever-list-4');
 const leverList5 = document.getElementById('lever-list-5');
 const groupSelectItems = document.querySelectorAll(".groups-select-item")
 
-//カスタム編集ボタンを使う宣言。edit-button
+//カスタム設定を編集⇔保存の文字切り替え
 let isDisable = true
-// レバー設定ボタン・ペダル設定ボタンが有効になる。
 editButton.addEventListener('click', () => {
   if (isDisable) {
     groupSelectItems.forEach(item => {
@@ -26,11 +25,12 @@ editButton.addEventListener('click', () => {
     isDisable = true
   }
 });
+
+//各項目のプルダウンについて、イベントを付与する
 leverList2.addEventListener('change', checkSelection);
 leverList3.addEventListener('change', checkSelection);
 leverList4.addEventListener('change', checkSelection);
 leverList5.addEventListener('change', checkSelection);
-
 
 function checkSelection() {
   const leverListArray = [leverList2, leverList3, leverList4, leverList5];
@@ -62,16 +62,29 @@ function checkSelection() {
   }
 }
 
+//ローカルストレージへの値の保存
+groupSelectItems.forEach(item => {
+  item.addEventListener('change', () => {
+    const key = item.getAttribute('id');
+    const value = item.value;
+    localStorage.setItem(key, value);
+  });
+});
+
+//ローカルストレージからの値の読み込み
+groupSelectItems.forEach(item => {
+  const key = item.getAttribute('id');
+  const value = localStorage.getItem(key);
+  if (value) {
+    item.value = value;
+  }
+});
 
 
-// 自分で書いたコードループさせられないため没コード
 
-// function checkSelection() {
-//   for (let i = 0; i < someValue; i++) {
-//     if (leverList2.value === '未選択' || leverList3.value === '未選択' || leverList4.value === '未選択' || leverList5.value === '未選択' || leverList2.value === leverList3 || leverList2.value === leverList4 || leverList2.value === leverList5 || leverList3.value === leverList4 || leverList3.value === leverList5 || leverList4.value === leverList5.value) {
-//       editButton.setAttribute('disabled', '');
-//     } else {
-//       editButton.removeAttribute('disabled');
-//     }
-//   }
-// }
+
+
+
+
+
+
