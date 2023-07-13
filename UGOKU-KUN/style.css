@@ -104,10 +104,13 @@ html {
   border: solid 2px black;
 }
 
-button:active {
+.arrow-button:active {
   transform: translateY(2.0px);
+  opacity: 0.2;
 }
-
+#stop-switch:active{
+  background: red;
+}
 
 @media screen and (max-width:380px) {
   html {
