@@ -33,7 +33,7 @@ html {
 
 #up-arrow {
   border-radius: 50%;
-  border-style: black;
+  border-style:solid;
   justify-content: center;
   align-items: center;
   width: 110px;
@@ -49,7 +49,7 @@ html {
 
 #right-arrow {
   border-radius: 50%;
-  border-style: black;
+  border-style: solid;
   justify-content: center;
   align-items: center;
   width: 110px;
@@ -63,7 +63,7 @@ html {
 
 #left-arrow {
   border-radius: 50%;
-  border-style: black;
+  border-style: solid;
   justify-content: center;
   align-items: center;
   width: 110px;
@@ -79,7 +79,7 @@ html {
 
 #down-arrow {
   border-radius: 50%;
-  border-style: black;
+  border-style: solid;
   justify-content: center;
   align-items: center;
   width: 110px;
@@ -106,11 +106,11 @@ html {
 }
 
 .arrow-button:active {
-  transform: translateY(2.0px);
-  opacity: 0.2;
+  transform: translateY(2.0px) !important;
+  opacity: 0.2 !important;
 }
 #stop-switch:active{
-  background: red;
+  background: red !important;
 }
 
 @media screen and (max-width:380px) {
@@ -148,7 +148,7 @@ html {
 
   #up-arrow {
     border-radius: 50%;
-    border-style: black;
+    border-style: solid;
     justify-content: center;
     align-items: center;
     width: 110px;
@@ -164,7 +164,7 @@ html {
 
   #right-arrow {
     border-radius: 50%;
-    border-style: black;
+    border-style: solid;
     justify-content: center;
     align-items: center;
     width: 110px;
@@ -178,7 +178,7 @@ html {
 
   #left-arrow {
     border-radius: 50%;
-    border-style: black;
+    border-style: solid;
     justify-content: center;
     align-items: center;
     width: 110px;
@@ -194,7 +194,7 @@ html {
 
   #down-arrow {
     border-radius: 50%;
-    border-style: black;
+    border-style: solid;
     justify-content: center;
     align-items: center;
     width: 110px;
@@ -220,11 +220,11 @@ html {
   }
 
   .arrow-button:active {
-    transform: translateY(2.0px);
-    opacity: 0.2;
+    transform: translateY(2.0px) !important;
+    opacity: 0.2 !important;
   }
   #stop-switch:active{
-    background: red;
+    background: red !important;
   }
 }
 
@@ -262,7 +262,7 @@ html {
 
   #up-arrow {
     border-radius: 50%;
-    border-style: black;
+    border-style: solid;
     justify-content: center;
     align-items: center;
     width: 110px;
@@ -278,7 +278,7 @@ html {
 
   #right-arrow {
     border-radius: 50%;
-    border-style: black;
+    border-style: solid;
     justify-content: center;
     align-items: center;
     width: 110px;
@@ -292,7 +292,7 @@ html {
 
   #left-arrow {
     border-radius: 50%;
-    border-style: black;
+    border-style: solid;
     justify-content: center;
     align-items: center;
     width: 110px;
@@ -308,7 +308,7 @@ html {
 
   #down-arrow {
     border-radius: 50%;
-    border-style: black;
+    border-style: solid;
     justify-content: center;
     align-items: center;
     width: 110px;
@@ -334,10 +334,10 @@ html {
   }
 
   .arrow-button:active {
-    transform: translateY(2.0px);
-    opacity: 0.2;
+    transform: translateY(2.0px) ;
+    opacity: 0.2 !important;
   }
   #stop-switch:active{
-    background: red;
+    background: red !important;
   }
 }
