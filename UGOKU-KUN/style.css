@@ -102,6 +102,7 @@ html {
   margin-top: 3rem;
   background-color: lightpink;
   border: solid 2px black;
+  font-size: 1.5rem;
 }
 
 .arrow-button:active {
