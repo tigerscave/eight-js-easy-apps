@@ -13,18 +13,23 @@
   text-align: center;
 }
 
-a{
-  width: 18px;
-  height: 18px;
+#check-online{
+  width: 16px;
+  height: 16px;
   background-color: greenyellow;
   border-radius: 50%;
+  border:solid 1px black;
+}
 
+#online-speed{
+  display: flex;
+  position:absolute;
+  margin-left:1.8rem;
 }
 
 #up-arrow{
   border-radius: 50%;
   border-style: black;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 110px;
@@ -41,7 +46,6 @@ a{
 #right-arrow{
   border-radius: 50%;
   border-style: black;
-
   justify-content: center;
   align-items: center;
   width: 110px;
@@ -74,7 +78,6 @@ a{
 #down-arrow{
   border-radius: 50%;
   border-style: black;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 110px;
@@ -94,6 +97,11 @@ a{
   text-align: center;
   position: relative;
   margin-left:5.2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   background-color: lightpink;
+  border:solid 2px black;
+}
+
+button:active {
+  transform: translateY(2.0px);
 }
