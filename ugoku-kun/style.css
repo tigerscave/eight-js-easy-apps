@@ -110,6 +110,7 @@ html {
 }
 
 .arrow-button:active {
+  outline: none;
   opacity: 0.2 !important;
 }
 
@@ -228,6 +229,7 @@ html {
   }
 
   .arrow-button:active {
+    outline: none;
     opacity: 0.2 !important;
   }
 
@@ -350,6 +352,7 @@ html {
   }
 
   .arrow-button:active {
+    outline: none;
     opacity: 0.2 !important;
   }
 
