@@ -1,0 +1,345 @@
+@charset "utf-8";
+
+html {
+  touch-action: manipulation;
+}
+
+.main-title {
+  margin-top: 1rem;
+  font-size: 36px;
+  text-align: center;
+}
+
+.producer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  text-align: center;
+}
+
+.check-online {
+  width: 16px;
+  height: 16px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  border: solid 1px black;
+}
+
+.online-speed {
+  display: flex;
+  position: absolute;
+  margin-left: 1.8rem;
+}
+
+.up-arrow {
+  border-radius: 50%;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  background: #6fa1ff;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 8rem;
+  position: relative;
+}
+
+.right-arrow {
+  border-radius: 50%;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  background: #6fa1ff;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.left-arrow {
+  border-radius: 50%;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  background: #6fa1ff;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1rem;
+  margin-left: 0.3rem;
+  margin-right: 8.3rem;
+}
+
+.down-arrow {
+  border-radius: 50%;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  background: #6fa1ff;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1rem;
+  margin-left: 8rem;
+  position: relative;
+}
+
+.stop-switch {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  position: relative;
+  margin-left: 5.2rem;
+  margin-top: 3rem;
+  background-color: lightpink;
+  border: solid 2px black;
+  font-size: 1.5rem;
+}
+
+.arrow-button:active {
+  transform: translateY(2.0px) !important;
+  opacity: 0.2 !important;
+}
+
+.stop-switch:active {
+  background: red !important;
+}
+
+@media screen and (max-width:380px) {
+  html {
+    touch-action: manipulation;
+  }
+
+  .main-title {
+    margin-top: 1rem;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .producer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .check-online {
+    width: 16px;
+    height: 16px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    border: solid 1px black;
+  }
+
+  .online-speed {
+    display: flex;
+    position: absolute;
+    margin-left: 1.8rem;
+  }
+
+  .up-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 8rem;
+    position: relative;
+  }
+
+  .right-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .left-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.3rem;
+    margin-right: 8.0rem;
+  }
+
+  .down-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    position: relative;
+  }
+
+  .stop-switch {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    margin-left: 5.2rem;
+    margin-top: 3rem;
+    background-color: lightpink;
+    border: solid 2px black;
+  }
+
+  .arrow-button:active {
+    transform: translateY(2.0px) !important;
+    opacity: 0.2 !important;
+  }
+
+  .stop-switch:active {
+    background: red !important;
+  }
+}
+
+@media screen and (max-width:360px) {
+  html {
+    touch-action: manipulation;
+  }
+
+  .main-title {
+    margin-top: 1rem;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .producer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .check-online {
+    width: 16px;
+    height: 16px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    border: solid 1px black;
+  }
+
+  .online-speed {
+    display: flex;
+    position: absolute;
+    margin-left: 1.8rem;
+  }
+
+  .up-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 8rem;
+    position: relative;
+  }
+
+  .right-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .left-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.3rem;
+    margin-right: 7.0rem;
+  }
+
+  .down-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    position: relative;
+  }
+
+  .stop-switch {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    margin-left: 5.2rem;
+    margin-top: 3rem;
+    background-color: lightpink;
+    border: solid 2px black;
+  }
+
+  .arrow-button:active {
+    transform: translateY(2.0px);
+    opacity: 0.2 !important;
+  }
+
+  .stop-switch:active {
+    background: red !important;
+  }
+}
