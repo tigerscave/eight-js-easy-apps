@@ -109,6 +109,11 @@ html {
   font-size: 1.5rem;
 }
 
+.arrow-button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
 .arrow-button:focus {
   outline: none;
 }
@@ -234,6 +239,11 @@ html {
     margin-top: 3rem;
     background-color: lightpink;
     border: solid 2px black;
+  }
+
+  .arrow-button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
   }
   .arrow-button:focus {
     outline: none;
@@ -364,6 +374,11 @@ html {
     margin-top: 3rem;
     background-color: lightpink;
     border: solid 2px black;
+  }
+
+  .arrow-button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
   }
   .arrow-button:focus {
     outline: none;
