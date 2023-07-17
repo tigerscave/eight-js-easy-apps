@@ -109,6 +109,14 @@ html {
   font-size: 1.5rem;
 }
 
+.arrow-button:focus {
+  outline: none;
+}
+
+.arrow-button:focus-visible{
+  outline: none;
+}
+
 .arrow-button:active {
   outline: none;
   opacity: 0.2 !important;
@@ -226,6 +234,13 @@ html {
     margin-top: 3rem;
     background-color: lightpink;
     border: solid 2px black;
+  }
+  .arrow-button:focus {
+    outline: none;
+  }
+  
+  .arrow-button:focus-visible{
+    outline: none;
   }
 
   .arrow-button:active {
@@ -349,6 +364,13 @@ html {
     margin-top: 3rem;
     background-color: lightpink;
     border: solid 2px black;
+  }
+  .arrow-button:focus {
+    outline: none;
+  }
+  
+  .arrow-button:focus-visible{
+    outline: none;
   }
 
   .arrow-button:active {
