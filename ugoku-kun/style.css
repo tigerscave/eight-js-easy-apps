@@ -106,7 +106,6 @@ html {
 }
 
 .arrow-button:active {
-  transform: translateY(2.0px) !important;
   opacity: 0.2 !important;
 }
 
@@ -220,7 +219,6 @@ html {
   }
 
   .arrow-button:active {
-    transform: translateY(2.0px) !important;
     opacity: 0.2 !important;
   }
 
@@ -335,7 +333,6 @@ html {
   }
 
   .arrow-button:active {
-    transform: translateY(2.0px);
     opacity: 0.2 !important;
   }
 
