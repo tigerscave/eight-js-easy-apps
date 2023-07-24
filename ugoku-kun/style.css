@@ -45,6 +45,7 @@ html {
   margin-top: 2rem;
   margin-left: 8rem;
   position: relative;
+  outline: none;
 }
 
 .right-arrow {
@@ -59,6 +60,7 @@ html {
   text-decoration: none;
   text-align: center;
   margin-top: 1rem;
+  outline: none;
 }
 
 .left-arrow {
@@ -75,6 +77,7 @@ html {
   margin-top: 1rem;
   margin-left: 0.3rem;
   margin-right: 8.3rem;
+  outline: none;
 }
 
 .down-arrow {
@@ -91,6 +94,7 @@ html {
   margin-top: 1rem;
   margin-left: 8rem;
   position: relative;
+  outline: none;
 }
 
 .stop-switch {
@@ -105,8 +109,21 @@ html {
   font-size: 1.5rem;
 }
 
+.arrow-button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.arrow-button:focus {
+  outline: none;
+}
+
+.arrow-button:focus-visible{
+  outline: none;
+}
+
 .arrow-button:active {
-  transform: translateY(2.0px) !important;
+  outline: none;
   opacity: 0.2 !important;
 }
 
@@ -160,6 +177,7 @@ html {
     margin-top: 2rem;
     margin-left: 8rem;
     position: relative;
+    outline: none;
   }
 
   .right-arrow {
@@ -174,6 +192,7 @@ html {
     text-decoration: none;
     text-align: center;
     margin-top: 1rem;
+    outline: none;
   }
 
   .left-arrow {
@@ -190,6 +209,7 @@ html {
     margin-top: 1rem;
     margin-left: 0.3rem;
     margin-right: 8.0rem;
+    outline: none;
   }
 
   .down-arrow {
@@ -206,6 +226,8 @@ html {
     margin-top: 1rem;
     margin-left: 8rem;
     position: relative;
+    outline: none;
+
   }
 
   .stop-switch {
@@ -219,8 +241,20 @@ html {
     border: solid 2px black;
   }
 
+  .arrow-button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+  .arrow-button:focus {
+    outline: none;
+  }
+  
+  .arrow-button:focus-visible{
+    outline: none;
+  }
+
   .arrow-button:active {
-    transform: translateY(2.0px) !important;
+    outline: none;
     opacity: 0.2 !important;
   }
 
@@ -275,6 +309,8 @@ html {
     margin-top: 2rem;
     margin-left: 8rem;
     position: relative;
+    outline: none;
+
   }
 
   .right-arrow {
@@ -289,6 +325,8 @@ html {
     text-decoration: none;
     text-align: center;
     margin-top: 1rem;
+    outline: none;
+
   }
 
   .left-arrow {
@@ -305,6 +343,8 @@ html {
     margin-top: 1rem;
     margin-left: 0.3rem;
     margin-right: 7.0rem;
+    outline: none;
+
   }
 
   .down-arrow {
@@ -321,6 +361,8 @@ html {
     margin-top: 1rem;
     margin-left: 8rem;
     position: relative;
+    outline: none;
+
   }
 
   .stop-switch {
@@ -334,8 +376,20 @@ html {
     border: solid 2px black;
   }
 
+  .arrow-button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+  .arrow-button:focus {
+    outline: none;
+  }
+  
+  .arrow-button:focus-visible{
+    outline: none;
+  }
+
   .arrow-button:active {
-    transform: translateY(2.0px);
+    outline: none;
     opacity: 0.2 !important;
   }
 
