@@ -6,6 +6,8 @@ const mqttClient = mqtt.connect(mqttBrokerUrl);
 
 const topic = "/move_base/status";
 
+let enableToSendMessage = false;
+
 function handleMessage(topic, message) {
   const moveBaseStatus = JSON.parse(message.toString())
   const sequenceTextElement = document.getElementById("sequence")
@@ -27,7 +29,9 @@ function sendVelocity(linear, angular) {
       }
   });
 
-  mqttClient.publish("/cmd_vel", cmdVelMsg);
+  if(enableToSendMessage) {
+    mqttClient.publish("/cmd_vel", cmdVelMsg);
+  }
 }
 
 // リフト上下
@@ -45,7 +49,9 @@ function sendJointTrajectoryPoint(positions) {
     }]
   }
 
-  mqttClient.publish("/lifter_controller/command", JSON.stringify(data));
+  if(enableToSendMessage) {
+    mqttClient.publish("/lifter_controller/command", JSON.stringify(data));
+  }
 }
 
 mqttClient.on("connect", function () {
@@ -65,15 +71,29 @@ mqttClient.on('message', function (topic, message) {
   handleMessage(topic, message);
 });
 
+// Element周り
 
+// 操作ON/OFFボタン
+const controlOnButtonElement = document.getElementById("control-on");
+controlOnButtonElement.addEventListener("click", () => {
+  enableToSendMessage = true;
+})
+
+const controlOffButtonElement = document.getElementById("control-off");
+controlOffButtonElement.addEventListener("click", () => {
+  enableToSendMessage = false;
+})
+
+// 操作ボタン
 const upArrowButtonElement = document.getElementById("up-arrow");
-upArrowButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.0, 0.0]))
+upArrowButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.0, 0.0]));
 
 const downArrowButtonElement = document.getElementById("down-arrow");
-downArrowButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.5, 0.0]))
+downArrowButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.5, 0.0]));
 
 const rightArrowButtonElement = document.getElementById("right-arrow");
-rightArrowButtonElement.addEventListener("click", () => sendVelocity(0, -0.1))
+rightArrowButtonElement.addEventListener("click", () => sendVelocity(0, -0.1));
 
 const leftArrowButtonElement = document.getElementById("left-arrow");
-leftArrowButtonElement.addEventListener("click", () => sendVelocity(0, 0.1))
+leftArrowButtonElement.addEventListener("click", () => sendVelocity(0, 0.1));
+
