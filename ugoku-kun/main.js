@@ -4,14 +4,14 @@ const mqttBrokerUrl = "wss://mqtt.devwarp.work";
 
 const mqttClient = mqtt.connect(mqttBrokerUrl);
 
-const topic = "/move_base/status";
+const topic = "/seed_r7_ros_controller/voltage";
 
 let enableToSendMessage = false;
 
 function handleMessage(topic, message) {
-  const moveBaseStatus = JSON.parse(message.toString())
+  const voltageStatus = JSON.parse(message.toString())
   const sequenceTextElement = document.getElementById("sequence")
-  sequenceTextElement.innerText = moveBaseStatus.header.seq
+  sequenceTextElement.innerText = parseInt((voltageStatus.data / 29) * 100) + "%"
 }
 
 // liner: 前後　angular: 右回転、左回転
@@ -43,7 +43,7 @@ function sendJointTrajectoryPoint(positions) {
       velocities: [],
       accelerations: [],
       time_from_start: {
-        secs: 1,
+        secs: 2,
         nsecs: 500000000
       }
     }]
@@ -93,11 +93,14 @@ const upArrowButtonElement = document.getElementById("up-arrow");
 upArrowButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.0, 0.0]));
 
 const downArrowButtonElement = document.getElementById("down-arrow");
-downArrowButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.5, 0.0]));
+downArrowButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.5, -0.5]));
+
+const downArrow2ButtonElement = document.getElementById("down-arrow2");
+downArrow2ButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.9, -0.9]));
 
 const rightArrowButtonElement = document.getElementById("right-arrow");
-rightArrowButtonElement.addEventListener("click", () => sendVelocity(0, -0.1));
+rightArrowButtonElement.addEventListener("click", () => sendVelocity(0, -0.3));
 
 const leftArrowButtonElement = document.getElementById("left-arrow");
-leftArrowButtonElement.addEventListener("click", () => sendVelocity(0, 0.1));
+leftArrowButtonElement.addEventListener("click", () => sendVelocity(0, 0.3));
 
