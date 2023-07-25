@@ -77,11 +77,15 @@ mqttClient.on('message', function (topic, message) {
 const controlOnButtonElement = document.getElementById("control-on");
 controlOnButtonElement.addEventListener("click", () => {
   enableToSendMessage = true;
+  controlOffButtonElement.style.backgroundColor = "white";
+  controlOnButtonElement.style.backgroundColor = "#FFB6C1"
 })
 
 const controlOffButtonElement = document.getElementById("control-off");
 controlOffButtonElement.addEventListener("click", () => {
   enableToSendMessage = false;
+  controlOffButtonElement.style.backgroundColor = "#BAD3FF";
+  controlOnButtonElement.style.backgroundColor = "white"
 })
 
 // 操作ボタン
