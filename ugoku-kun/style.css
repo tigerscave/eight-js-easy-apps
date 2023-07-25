@@ -16,7 +16,7 @@ html {
   text-align: center;
 }
 
-.switchOnOffPanel {
+.switch-on-Off-panel {
   font-size: 2rem;
   display: flex;
   margin-bottom: 0.7rem;
@@ -24,7 +24,7 @@ html {
   margin-bottom: 1rem;
 }
 
-#control-on {
+.control-on {
   color: black;
   font-size: 1rem;
   width: 10rem;
@@ -35,7 +35,7 @@ html {
   cursor: pointer;
 }
 
-#control-off {
+.control-off {
   color: black;
   font-size: 1rem;
   width: 10rem;
