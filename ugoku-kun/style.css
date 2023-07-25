@@ -5,16 +5,45 @@ html {
 }
 
 .main-title {
-  margin-top: 1rem;
+  margin-top: 1.8rem;
   font-size: 36px;
   text-align: center;
 }
 
 .producer {
-  margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 18px;
   text-align: center;
+}
+
+.switchOnOffPanel {
+  font-size: 2rem;
+  display: flex;
+  margin-bottom: 0.7rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#control-on {
+  color: black;
+  font-size: 1rem;
+  width: 10rem;
+  height: 2.5rem;
+  background: white;
+  border: 1px solid black;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#control-off {
+  color: black;
+  font-size: 1rem;
+  width: 10rem;
+  height: 2.5rem;
+  background: #BAD3FF;
+  border: 1px solid black;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .check-online {
@@ -97,18 +126,6 @@ html {
   outline: none;
 }
 
-.stop-switch {
-  width: 200px;
-  height: 50px;
-  text-align: center;
-  position: relative;
-  margin-left: 5.2rem;
-  margin-top: 3rem;
-  background-color: lightpink;
-  border: solid 2px black;
-  font-size: 1.5rem;
-}
-
 .arrow-button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer;
@@ -118,7 +135,7 @@ html {
   outline: none;
 }
 
-.arrow-button:focus-visible{
+.arrow-button:focus-visible {
   outline: none;
 }
 
@@ -245,11 +262,12 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     cursor: pointer;
   }
+
   .arrow-button:focus {
     outline: none;
   }
-  
-  .arrow-button:focus-visible{
+
+  .arrow-button:focus-visible {
     outline: none;
   }
 
@@ -380,11 +398,12 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     cursor: pointer;
   }
+
   .arrow-button:focus {
     outline: none;
   }
-  
-  .arrow-button:focus-visible{
+
+  .arrow-button:focus-visible {
     outline: none;
   }
 
