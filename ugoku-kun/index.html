@@ -22,42 +22,26 @@
   </div>
   <div class="main-panel">
     <div class="upper-part">
-      <button id="up-arrow" class="up-arrow arrow-button" ontouchstart>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="chevron-double-up">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
-        </svg>
-      </button>
+      <button id="up-arrow" class="up-monitor control-button" ontouchstart>上</button>
     </div>
     <div class="middle-part">
-      <button id="left-arrow" class="left-arrow arrow-button" ontouchstart>
+      <button id="left-arrow" class="left-arrow control-button" ontouchstart>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="utern-left">
+          class="utern-left" width="4.5rem" height="4.5rem">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
         </svg>
       </button>
-      <button id="right-arrow" class="right-arrow arrow-button" ontouchstart>
+      <button id="down-arrow" class="middle-monitor control-button" ontouchstart>中
+      </button>
+      <button id="right-arrow" class="right-arrow control-button" ontouchstart>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="utern-right">
+          class="utern-right" width="4.5rem" height="4.5rem">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" />
         </svg>
       </button>
     </div>
     <div class="lower-part">
-      <button id="down-arrow" class="down-arrow arrow-button" ontouchstart>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="chevron-double-down">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
-        </svg>
-      </button>
-    </div>
-    <div class="lower-part">
-      <button id="down-arrow2" class="down-arrow arrow-button" ontouchstart>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="chevron-double-down">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
-        </svg>
-      </button>
+      <button id="down-arrow2" class="down-monitor control-button" ontouchstart>下</button>
     </div>
   </div>
 </body>
@@ -65,4 +49,5 @@
 <!-- for mqtt-js -->
 <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
 <script src="main.js"></script>
+
 </html>
