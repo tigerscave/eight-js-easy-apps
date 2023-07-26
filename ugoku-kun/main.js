@@ -29,8 +29,42 @@ function sendVelocity(linear, angular) {
       }
   });
 
+  const slowDownVelMsg = JSON.stringify({
+    linear: {
+        x: linear * 0.5,
+        y: 0,
+        z: 0
+    },
+    angular: {
+        x: 0,
+        y: 0,
+        z: angular * 0.5
+    }
+  });
+
+  const stopVelMsg = JSON.stringify({
+    linear: {
+        x: 0,
+        y: 0,
+        z: 0
+    },
+    angular: {
+        x: 0,
+        y: 0,
+        z: 0
+    }
+  });
+
   if(enableToSendMessage) {
     mqttClient.publish("/cmd_vel", cmdVelMsg);
+
+    setTimeout(() => {
+      mqttClient.publish("/cmd_vel", slowDownVelMsg);
+    }, 500)
+
+    setTimeout(() => {
+      mqttClient.publish("/cmd_vel", stopVelMsg);
+    }, 1000)
   }
 }
 
