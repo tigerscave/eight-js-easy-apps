@@ -8,6 +8,9 @@ const topic = "/seed_r7_ros_controller/voltage";
 
 let enableToSendMessage = false;
 
+const rightArrowButtonElement = document.getElementById("right-arrow");
+const leftArrowButtonElement = document.getElementById("left-arrow");
+
 function handleMessage(topic, message) {
   const voltageStatus = JSON.parse(message.toString())
   const sequenceTextElement = document.getElementById("sequence")
@@ -16,6 +19,8 @@ function handleMessage(topic, message) {
 
 // liner: 前後　angular: 右回転、左回転
 function sendVelocity(linear, angular) {
+  rightArrowButtonElement.disabled = true;
+  leftArrowButtonElement.disabled = true;
   const cmdVelMsg = JSON.stringify({
       linear: {
           x: linear,
@@ -29,29 +34,55 @@ function sendVelocity(linear, angular) {
       }
   });
 
-  const slowDownVelMsg = JSON.stringify({
+  const slowDown1VelMsg = JSON.stringify({
     linear: {
-        x: linear * 0.5,
+        x: linear * 0.8,
         y: 0,
         z: 0
     },
     angular: {
         x: 0,
         y: 0,
-        z: angular * 0.5
+        z: angular * 0.8
+    }
+  });
+
+  const slowDown2VelMsg = JSON.stringify({
+    linear: {
+        x: linear * 0.6,
+        y: 0,
+        z: 0
+    },
+    angular: {
+        x: 0,
+        y: 0,
+        z: angular * 0.6
+    }
+  });
+
+  const slowDown3VelMsg = JSON.stringify({
+    linear: {
+        x: linear * 0.3,
+        y: 0,
+        z: 0
+    },
+    angular: {
+        x: 0,
+        y: 0,
+        z: angular * 0.3
     }
   });
 
   const stopVelMsg = JSON.stringify({
     linear: {
-        x: 0,
+        x: linear * 0,
         y: 0,
         z: 0
     },
     angular: {
         x: 0,
         y: 0,
-        z: 0
+        z: angular * 0
     }
   });
 
@@ -59,11 +90,21 @@ function sendVelocity(linear, angular) {
     mqttClient.publish("/cmd_vel", cmdVelMsg);
 
     setTimeout(() => {
-      mqttClient.publish("/cmd_vel", slowDownVelMsg);
-    }, 500)
+      mqttClient.publish("/cmd_vel", slowDown1VelMsg);
+    }, 650)
+
+    setTimeout(() => {
+      mqttClient.publish("/cmd_vel", slowDown2VelMsg);
+    }, 800)
+
+    setTimeout(() => {
+      mqttClient.publish("/cmd_vel", slowDown3VelMsg);
+    }, 900)
 
     setTimeout(() => {
       mqttClient.publish("/cmd_vel", stopVelMsg);
+      rightArrowButtonElement.disabled = false;
+      leftArrowButtonElement.disabled = false;
     }, 1000)
   }
 }
@@ -132,9 +173,7 @@ downArrowButtonElement.addEventListener("click", () => sendJointTrajectoryPoint(
 const downArrow2ButtonElement = document.getElementById("down-arrow2");
 downArrow2ButtonElement.addEventListener("click", () => sendJointTrajectoryPoint([0.9, -0.9]));
 
-const rightArrowButtonElement = document.getElementById("right-arrow");
 rightArrowButtonElement.addEventListener("click", () => sendVelocity(0, -0.3));
 
-const leftArrowButtonElement = document.getElementById("left-arrow");
 leftArrowButtonElement.addEventListener("click", () => sendVelocity(0, 0.3));
 
