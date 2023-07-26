@@ -19,8 +19,10 @@ function handleMessage(topic, message) {
 
 // liner: 前後　angular: 右回転、左回転
 function sendVelocity(linear, angular) {
-  rightArrowButtonElement.disabled = true;
-  leftArrowButtonElement.disabled = true;
+  if(enableToSendMessage) {
+    rightArrowButtonElement.disabled = true;
+    leftArrowButtonElement.disabled = true;
+  }
   const cmdVelMsg = JSON.stringify({
       linear: {
           x: linear,
