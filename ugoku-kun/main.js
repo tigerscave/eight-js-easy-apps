@@ -14,7 +14,7 @@ const leftArrowButtonElement = document.getElementById("left-arrow");
 function handleMessage(topic, message) {
   const voltageStatus = JSON.parse(message.toString())
   const sequenceTextElement = document.getElementById("sequence")
-  sequenceTextElement.innerText = parseInt((voltageStatus.data / 29) * 100) + "%"
+  sequenceTextElement.innerText = voltageStatus.data.toFixed(2)
 }
 
 // liner: 前後　angular: 右回転、左回転
