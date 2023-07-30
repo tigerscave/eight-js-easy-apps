@@ -4,17 +4,34 @@ const mqttBrokerUrl = "wss://mqtt.devwarp.work";
 
 const mqttClient = mqtt.connect(mqttBrokerUrl);
 
-const topic = "/seed_r7_ros_controller/voltage";
+const voltageTopic = "/seed_r7_ros_controller/voltage";
+const gamepadCmdVelTopic = "/gamepad/cmd_vel"
+const subscribeTopics = [voltageTopic,gamepadCmdVelTopic ]
 
 let enableToSendMessage = false;
 
 const rightArrowButtonElement = document.getElementById("right-arrow");
 const leftArrowButtonElement = document.getElementById("left-arrow");
 
-function handleMessage(topic, message) {
+const sequenceTextElement = document.getElementById("sequence");
+const controlModeText = document.getElementById("control-mode");
+
+function handleVoltageMessage(message) {
   const voltageStatus = JSON.parse(message.toString())
-  const sequenceTextElement = document.getElementById("sequence")
   sequenceTextElement.innerText = voltageStatus.data.toFixed(2)
+}
+
+function handleGamepadCmdVelMessage(message) {
+  const data = JSON.parse(message.toString())
+  const linearSum = data.linear.x + data.linear.y + data.linear.z;
+  const angularSum = data.angular.x + data.angular.y + data.angular.z;
+
+  // ロボットのliner.xが0かつangular.zが0なら、遠隔操作可能
+  if((linearSum === 0) && (angularSum === 0)) {
+    controlModeText.innerText = "遠隔操作可能";
+  } else {  // それ以外は、現地操作中
+    controlModeText.innerText = "スタッフ操作中";
+  }
 }
 
 // liner: 前後　angular: 右回転、左回転
@@ -134,18 +151,19 @@ function sendJointTrajectoryPoint(positions) {
 mqttClient.on("connect", function () {
   console.log("Connected to MQTT broker");
   // topicをsubscribe
-  mqttClient.subscribe(topic, function (err) {
+  mqttClient.subscribe(subscribeTopics, function (err) {
       if (err) {
           console.error("Error while subscribing:", err);
       } else {
-          console.log("Subscribed to topic:", topic);
+          console.log("Subscribed to topic:", subscribeTopics);
       }
   });
 });
 
 // mqttClientがメッセージを受け取った時にfireするコールバック
 mqttClient.on('message', function (topic, message) {
-  handleMessage(topic, message);
+  if(topic === voltageTopic) handleVoltageMessage(message);
+  if(topic === gamepadCmdVelTopic) handleGamepadCmdVelMessage(message);
 });
 
 // Element周り
