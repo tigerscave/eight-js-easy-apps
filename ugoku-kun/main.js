@@ -15,12 +15,12 @@ const leftArrowButtonElement = document.getElementById("left-arrow");
 
 const sequenceTextElement = document.getElementById("sequence");
 const controlModeText = document.getElementById("control-mode");
-const onlineGreenColor = document.querySelector(".check-online");
+const onlineStatusIndicator = document.querySelector(".check-online");
 
 function handleVoltageMessage(message) {
   const voltageStatus = JSON.parse(message.toString())
   sequenceTextElement.innerText = voltageStatus.data.toFixed(2)
-  onlineGreenColor.style.backgroundColor = "lightgreen"
+  onlineStatusIndicator.style.backgroundColor = "lightgreen"
   controlModeText.innerText = "遠隔操作可能";//立ち上げ後、テキスト変更（入力を待たない）
 }
 
@@ -164,13 +164,13 @@ mqttClient.on("connect", function () {
 });
 
 let lastMessageTimestamp = Date.now();
-const lastMessageTime = document.getElementById("time-stamp");
+const receivingMessageTimeLabel = document.getElementById("received-time");
 
 // mqttClientがメッセージを受け取った時にfireするコールバック
 mqttClient.on('message', function (topic, message) {
   console.log("Receiving a message!")
   lastMessageTimestamp = Date.now();
-  lastMessageTime.innerText = lastMessageTimestamp
+  receivingMessageTimeLabel.innerText = lastMessageTimestamp
   if (topic === voltageTopic) handleVoltageMessage(message);
   if (topic === gamepadCmdVelTopic) handleGamepadCmdVelMessage(message);
 });
@@ -181,7 +181,7 @@ setInterval(function () {
   const pastTime = currentTime - lastMessageTimestamp;
   if (pastTime >= 5000) {
     console.log("offline!!!!!")
-    onlineGreenColor.style.backgroundColor = "lightgray";
+    onlineStatusIndicator.style.backgroundColor = "lightgray";
     controlModeText.innerText = "ロボット立ち上げ中";
   }
 }, 5000);

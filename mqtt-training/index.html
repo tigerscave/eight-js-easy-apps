@@ -16,7 +16,7 @@
       <button id="fuga-button">fuga</button>
     </h3>
     <h3>Subscribe</h3>
-    <ul id="mk-list"></ul>
+    <ul id="subscribed-items"></ul>
   </div>
 </body>
 <script>
@@ -25,7 +25,7 @@
 
   const hogeButton = document.getElementById("hoge-button");
   const fugaButton = document.getElementById("fuga-button");
-  const mkList = document.getElementById("mk-list");
+  const makeItems = document.getElementById("subscribed-items");
 
   hogeButton.addEventListener('click', () => {
     client.publish(topic, "hoge") // message is Buffer
@@ -41,11 +41,11 @@
   client.on('message', (topic, message) => {
     let li = document.createElement('li');
     li.textContent = message.toString();
-    mkList.appendChild(li);
+    makeItems.appendChild(li);
 
-    const listItems = mkList.getElementsByTagName('li');
+    const listItems = makeList.getElementsByTagName('li');
     if (listItems.length > 10) {
-      mkList.removeChild(listItems[0]) //1番古い要素が消える。
+      makeItems.removeChild(listItems[0]) //1番古い要素が消える。
     }
   });
 
