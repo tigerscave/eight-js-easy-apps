@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>camera-view-sample</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="main-panel">
-    <h3>eight camera viewer</h3>
-    <div class="ip-address-label">
-      <h4>IP アドレス</h4>
-      <input type="text" id="ip-address"></input>
-      <button id="register-ip-address-button">保存</button>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>camera-view-sample</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="main-panel">
+      <h3>eight camera viewer</h3>
+      <div class="ip-address-label">
+        <h4>IP アドレス</h4>
+        <input type="text" id="ip-address"></input>
+        <button id="register-ip-address-button">保存</button>
+      </div>
+      <iframe id="camera-viewer"
+        src="http://{ipAddress}/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10">
+      </iframe>
     </div>
-    <iframe id="camera-viewer"
-      src="http://{ipAddress}/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10">
-    </iframe>
-  </div>
-</body>
-<script src="main.js"></script>
+  </body>
+  <script src="main.js"></script>
+
 </html>
