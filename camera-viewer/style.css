@@ -1,18 +1,35 @@
 @charset'utf-8';
 
-.main-panel{
+html {
+  transition: transform 0.8s ease-in-out;
+}
+
+.main-panel {
   width: 48rem;
   height: 32rem;
   border: 1px solid black;
 }
 
-h3,h4 {
- margin-left: 1rem;
+h3,
+h4 {
+  margin-left: 1rem;
+}
+
+.website-zoom-label {
+  display: flex;
+}
+
+.zoom-in-html-button,
+.zoom-out-html-button {
+  margin-top: 1.5rem;
+  width: 2.5rem;
+  height: 1.5rem;
 }
 
 .ip-address-label {
   display: flex;
 }
+
 input {
   height: 2rem;
   margin-top: 0.8rem;
@@ -24,10 +41,11 @@ button {
   height: 2rem;
   margin-top: 1rem;
   margin-left: 1rem;
+  border: 1px solid;
 }
 
 iframe {
   width: 30rem;
-  height:18rem;
+  height: 18rem;
   margin-left: 1rem;
 }
