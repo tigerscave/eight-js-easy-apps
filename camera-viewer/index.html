@@ -13,13 +13,23 @@
     <h3>eight camera viewer</h3>
     <div class="website-zoom-label">
       <h4>Webサイト ズームレベル:<span id="html-zoom-level">1.0</span></h4>
-      <button class="zoom-in-html-button" id="zoom-in-html-button">+</button>
-      <button class="zoom-out-html-button" id="zoom-out-html-button">-</button>
+      <button class="common-button" id="zoom-in-html-button">+</button>
+      <button class="common-button" id="zoom-out-html-button">-</button>
     </div>
     <div class="ip-address-label">
       <h4>IP アドレス</h4>
       <input type="text" id="ip-address"></input>
       <button id="register-ip-address-button">保存</button>
+    </div>
+    <div class="viewer-position-label">
+      <h4>拡大・縮小</h4>
+      <button class="common-button" id="zoom-in-monitor-button">+</button>
+      <button class="common-button" id="zoom-out-monitor-button">-</button>
+      <h4>移動</h4>
+      <button class="common-button" id="up-button">上</button>
+      <button class="common-button" id="down-button">下</button>
+      <button class="common-button" id="left-button">左</button>
+      <button class="common-button" id="right-button">右</button>
     </div>
     <iframe id="camera-viewer"
       src="http://{ipAddress}/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10">

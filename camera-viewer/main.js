@@ -49,4 +49,38 @@ if (localStorage.getItem('address-number') === null) {
   ipAddressInputElement.value = localStorage.getItem('address-number');
   //既にIPアドレスの値が入力されていたら、カメラビューワーに反映させる。
   cameraViewer.src = "http://" + ipAddressInputElement.value + "/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10";
-}
+};
+
+//ビューワーの拡大縮小
+const zoomInMonitorButton = document.getElementById("zoom-in-monitor-button")
+const zoomOutMonitorButton = document.getElementById("zoom-out-monitor-button")
+
+zoomInMonitorButton.addEventListener('click', () => {
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/directctrl?zoom=1";
+});
+
+zoomOutMonitorButton.addEventListener('click', () => {
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/directctrl?zoom=-1";
+});
+
+//ビューワーの上下左右移動
+const moveUpButton = document.getElementById("up-button")
+const moveDownButton = document.getElementById("down-button")
+const moveLeftButton = document.getElementById("left-button")
+const moveRightButton = document.getElementById("right-button")
+
+moveUpButton.addEventListener('click', () => {
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=0&tilt=-1&Language=0";
+});
+
+moveDownButton.addEventListener('click', () => {
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=0&tilt=1&Language=0";
+});
+
+moveLeftButton.addEventListener('click', () => {
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=-1&tilt=0&Language=0";
+});
+
+moveRightButton.addEventListener('click', () => {
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=1&tilt=0&Language=0";
+});
