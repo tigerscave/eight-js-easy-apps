@@ -22,6 +22,17 @@ zoomOutHtmlButton.addEventListener('click', () => {
   htmlZoomLevel.innerText = zoomLevel.toFixed(1);
 });
 
+const reloadButton = document.getElementById("reload-button")
+const reloadMessage = document.getElementById("reload-message")
+
+reloadButton.addEventListener('click',() =>{
+  reloadMessage.classList.add('appear');
+  setTimeout(() => {
+    reloadMessage.classList.remove('appear');
+    location.reload()
+  }, 800)
+});
+
 //IPアドレス関係
 const ipAddressInputElement = document.getElementById("ip-address")
 const registerIpAddressButton = document.getElementById("register-ip-address-button")

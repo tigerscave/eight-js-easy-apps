@@ -26,12 +26,35 @@ input {
   cursor: pointer;
 }
 
+
 button:hover {
   opacity: .6;
 }
 
 button:active {
   opacity: .3;
+}
+
+/*リロード関係*/
+.reload-button {
+  margin-top: 1rem;
+  width: 3rem;
+  height: 2rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.reload-message {
+  margin-top:1.4rem;
+  margin-left: 1rem;
+  font-size:0.8rem;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.appear {
+  opacity: 1;
 }
 
 /*各ラベルの表示*/
