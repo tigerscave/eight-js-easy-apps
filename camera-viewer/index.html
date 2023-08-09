@@ -51,9 +51,22 @@
       <button class="common-button" id="reduce-ratio">②</button>
     </div>
     <h4 id="network-message">表示する映像はありません。</h4>
-    <iframe id="camera-viewer"
-      src="http://{ipAddress}/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10">
-    </iframe>
+    <div class="iframe-label">
+      <div class="mini-buttons">
+        <button class="mini-button" id="mini1">①</button>
+        <button class="mini-button" id="mini2">②</button>
+        <button class="mini-button" id="mini3">③</button>
+        <button class="mini-button" id="mini+">+</button>
+        <button class="mini-button" id="mini-">-</button>
+        <button class="mini-button" id="mini-up">↑</button>
+        <button class="mini-button" id="mini-down">↓</button>
+        <button class="mini-button" id="mini-left">←</button>
+        <button class="mini-button" id="mini-right">→</button>
+      </div>
+      <iframe id="camera-viewer"
+        src="http://{ipAddress}/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10">
+      </iframe>
+    </div>
   </div>
 </body>
 <script src="main.js"></script>

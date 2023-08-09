@@ -61,6 +61,18 @@ if (localStorage.getItem('address-number') !== "") {
   networkMessage.innerText = "表示する映像はありません。"
 }
 
+//ビューワーの拡大縮小
+const zoomInMonitorButton = document.getElementById("zoom-in-monitor-button")
+const zoomOutMonitorButton = document.getElementById("zoom-out-monitor-button")
+
+zoomInMonitorButton.addEventListener('click', () => {
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/directctrl?zoom=1";
+});
+
+zoomOutMonitorButton.addEventListener('click', () => {
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/directctrl?zoom=-1";
+});
+
 //ビューワーのプリセット
 //保存
 const savePreset1Button = document.getElementById('save-preset1')
@@ -104,17 +116,6 @@ movePreset3Button.addEventListener('click', () => {
   cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?preset=3";
 });
 
-//ビューワーの拡大縮小
-const zoomInMonitorButton = document.getElementById("zoom-in-monitor-button")
-const zoomOutMonitorButton = document.getElementById("zoom-out-monitor-button")
-
-zoomInMonitorButton.addEventListener('click', () => {
-  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/directctrl?zoom=1";
-});
-
-zoomOutMonitorButton.addEventListener('click', () => {
-  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/directctrl?zoom=-1";
-});
 
 //ビューワーの上下左右移動
 const upArrowButton = document.getElementById("up-button")
@@ -150,4 +151,51 @@ enlargeRatioButton.addEventListener('click', () => {
 reduceRatioButton.addEventListener('click', () => {
   cameraViewer.style.width = '30rem'
   cameraViewer.style.height = '18rem';
+});
+
+//ミニボタン
+const miniMove1Button = document.getElementById("mini1")
+const miniMove2Button = document.getElementById("mini2")
+const miniMove3Button = document.getElementById("mini3")
+const miniZoomInButton = document.getElementById("mini+")
+const miniZoomOutButton = document.getElementById("mini-")
+const miniUpButton = document.getElementById("mini-up")
+const miniDownButton = document.getElementById("mini-down")
+const miniLeftButton = document.getElementById("mini-left")
+const miniRightButton = document.getElementById("mini-right")
+
+miniMove1Button.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?preset=1";
+});
+
+miniMove2Button.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?preset=2";
+});
+
+miniMove3Button.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?preset=3";
+});
+
+miniZoomInButton.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/directctrl?zoom=1";
+});
+
+miniZoomOutButton.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/directctrl?zoom=-1";
+});
+
+miniUpButton.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=0&tilt=-1&Language=0";
+});
+
+miniDownButton.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=0&tilt=1&Language=0";
+});
+
+miniLeftButton.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=-1&tilt=0&Language=0";
+});
+
+miniRightButton.addEventListener('click',()=>{
+  cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=1&tilt=0&Language=0";
 });
