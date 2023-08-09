@@ -25,12 +25,32 @@
       <h4>拡大・縮小</h4>
       <button class="common-button" id="zoom-in-monitor-button">+</button>
       <button class="common-button" id="zoom-out-monitor-button">-</button>
-      <h4>移動</h4>
-      <button class="common-button" id="up-button">上</button>
-      <button class="common-button" id="down-button">下</button>
-      <button class="common-button" id="left-button">左</button>
-      <button class="common-button" id="right-button">右</button>
+      <h4>プリセット</h4>
+      <div class="preset-container">
+        <button>①保存</button>
+        <button>②保存</button>
+        <button>③保存</button>
+        <button>①移動</button>
+        <button>②移動</button>
+        <button>③移動</button>
+      </div>
+      <h4>視点移動</h4>
+      <div class="viewer-container">
+        <button class="arrow-button none"></button>
+        <button class="arrow-button" id="up-button">上</button>
+        <button class="arrow-button none"></button>
+        <button class="arrow-button" id="left-button">左</button>
+        <button class="arrow-button none"></button>
+        <button class="arrow-button" id="right-button">右</button>
+        <button class="arrow-button none"></button>
+        <button class="arrow-button" id="down-button">下</button>
+        <button class="arrow-button none"></button>
+      </div>
+      <h4>比率</h4>
+      <button class="common-button">①</button>
+      <button class="common-button">②</button>
     </div>
+    <h4 id="network-message">表示する映像はありません。</h4>
     <iframe id="camera-viewer"
       src="http://{ipAddress}/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10">
     </iframe>

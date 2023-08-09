@@ -1,5 +1,6 @@
 @charset'utf-8';
 
+/*ページ全体*/
 html {
   transition: transform 0.8s ease-in-out;
 }
@@ -12,38 +13,16 @@ html {
 }
 
 h3,
-h4 {
+h4,
+input {
   margin-left: 1rem;
-}
-
-.website-zoom-label {
-  display: flex;
+  margin-right: 1rem;
 }
 
 .common-button {
   margin-top: 1.3rem;
   width: 2.5rem;
   height: 1.5rem;
-  cursor: pointer;
-}
-
-.ip-address-label,
-.viewer-position-label {
-  display: flex;
-}
-
-input {
-  height: 2rem;
-  margin-top: 0.8rem;
-  margin-left: 1rem;
-}
-
-button {
-  width: 4rem;
-  height: 2rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  border: 1px solid;
   cursor: pointer;
 }
 
@@ -55,6 +34,47 @@ button:active {
   opacity: .3;
 }
 
+/*各ラベルの表示*/
+.ip-address-label,
+.viewer-position-label,
+.website-zoom-label {
+  display: flex;
+}
+
+/*IPアドレス*/
+#register-ip-address-button {
+  width: 4rem;
+  height: 2rem;
+  border: 1px solid;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+input {
+  height: 2rem;
+  margin-top: 0.8rem;
+  margin-left: 1rem;
+}
+
+/*プリセット*/
+.preset-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.viewer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*視点移動*/
+.none {
+  border: none;
+  background-color: inherit;
+  pointer-events: none;
+}
+
+/*カメラビューワー*/
 iframe {
   width: 30rem;
   height: 18rem;

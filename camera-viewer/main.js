@@ -26,6 +26,7 @@ zoomOutHtmlButton.addEventListener('click', () => {
 const ipAddressInputElement = document.getElementById("ip-address")
 const registerIpAddressButton = document.getElementById("register-ip-address-button")
 const cameraViewer = document.getElementById("camera-viewer")
+const networkMessage = document.getElementById("network-message")
 
 registerIpAddressButton.addEventListener('click', () => {
   if (registerIpAddressButton.innerText === "編集") {
@@ -39,17 +40,26 @@ registerIpAddressButton.addEventListener('click', () => {
     ipAddressInputElement.disabled = true;
     localStorage.setItem('address-number', ipAddressInputElement.value);
     registerIpAddressButton.style.background = "#D9E5FF";
+    
+    //文字の切り替え（接続中⇔表示する映像はありません）
+    if (localStorage.getItem('address-number') !== "") {
+      ipAddressInputElement.value = localStorage.getItem('address-number')
+      cameraViewer.src = "http://" + ipAddressInputElement.value + "/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10";
+      networkMessage.innerText = "接続中！"
+    } else {
+      networkMessage.innerText = "表示する映像はありません。"
+    }
   }
 });
 
-// IPアドレスの値をlocalStorageから読み込み
-if (localStorage.getItem('address-number') === null) {
-  ipAddressInputElement.value = '';
-} else {
-  ipAddressInputElement.value = localStorage.getItem('address-number');
-  //既にIPアドレスの値が入力されていたら、カメラビューワーに反映させる。
+//リロード時に、IPアドレスの値が入力されていたら、カメラビューワーに反映させる。
+if (localStorage.getItem('address-number') !== "") {
+  ipAddressInputElement.value = localStorage.getItem('address-number')
   cameraViewer.src = "http://" + ipAddressInputElement.value + "/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10";
-};
+  networkMessage.innerText = "接続中！"
+} else {
+  networkMessage.innerText = "表示する映像はありません。"
+}
 
 //ビューワーの拡大縮小
 const zoomInMonitorButton = document.getElementById("zoom-in-monitor-button")
@@ -64,23 +74,23 @@ zoomOutMonitorButton.addEventListener('click', () => {
 });
 
 //ビューワーの上下左右移動
-const moveUpButton = document.getElementById("up-button")
-const moveDownButton = document.getElementById("down-button")
-const moveLeftButton = document.getElementById("left-button")
-const moveRightButton = document.getElementById("right-button")
+const upArrowButton = document.getElementById("up-button")
+const downArrowButton = document.getElementById("down-button")
+const leftArrowButton = document.getElementById("left-button")
+const rightArrowButton = document.getElementById("right-button")
 
-moveUpButton.addEventListener('click', () => {
+upArrowButton.addEventListener('click', () => {
   cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=0&tilt=-1&Language=0";
 });
 
-moveDownButton.addEventListener('click', () => {
+downArrowButton.addEventListener('click', () => {
   cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=0&tilt=1&Language=0";
 });
 
-moveLeftButton.addEventListener('click', () => {
+leftArrowButton.addEventListener('click', () => {
   cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=-1&tilt=0&Language=0";
 });
 
-moveRightButton.addEventListener('click', () => {
+rightArrowButton.addEventListener('click', () => {
   cameraViewer.src = "http://" + ipAddressInputElement.value + "/cgi-bin/camctrl?pan=1&tilt=0&Language=0";
 });
