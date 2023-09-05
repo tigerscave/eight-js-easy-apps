@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+html {
+  touch-action: manipulation;
+}
+
+.main-title {
+  margin-top: 1.8rem;
+  font-size: 36px;
+  text-align: center;
+}
+
+.producer {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  text-align: center;
+}
+
+.switch-on-off-panel {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.middle-part {
+  display: flex;
+}
+
+/*操作ONと操作OFFのstyle*/
+.control-on,
+.control-off {
+  color: black;
+  font-size: 1rem;
+  width: 10rem;
+  height: 2.5rem;
+  background: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.control-off {
+  background: #BAD3FF;
+}
+
+.check-online {
+  width: 16px;
+  height: 16px;
+  background-color: lightgray;
+  border-radius: 50%;
+  border: solid 1px black;
+}
+
+.online-speed {
+  display: flex;
+  position: absolute;
+  margin-left: 1.8rem;
+}
+
+/*モニターの上、中、下のstyle*/
+.up-monitor,
+.middle-monitor,
+.down-monitor {
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  border-style: solid;
+  width: 110px;
+  height: 110px;
+  background: #F4A460;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+}
+
+.up-monitor {
+  margin-top: 2rem;
+  margin-left: 8rem;
+}
+
+.middle-monitor {
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  margin-top: 1rem;
+}
+
+.down-monitor {
+  margin-top: 1rem;
+  margin-left: 8rem;
+}
+
+/*右移動、左移動のstyle*/
+.right-arrow,
+.left-arrow {
+  border-radius: 50%;
+  border-style: solid;
+  width: 110px;
+  height: 110px;
+  background: #6fa1ff;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1rem;
+  outline: none;
+}
+
+.left-arrow {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+
+/*ボタン全般のstyle*/
+.control-button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.control-button:focus {
+  outline: none;
+}
+
+.control-button:focus-visible {
+  outline: none;
+}
+
+.control-button:active {
+  outline: none;
+  opacity: 0.2 !important;
+}
+
+@media screen and (max-width:380px) {
+  html {
+    touch-action: manipulation;
+  }
+
+  .main-title {
+    margin-top: 1rem;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .producer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .check-online {
+    width: 16px;
+    height: 16px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    border: solid 1px black;
+  }
+
+  .online-speed {
+    display: flex;
+    position: absolute;
+    margin-left: 1.8rem;
+  }
+
+  .up-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 8rem;
+    position: relative;
+    outline: none;
+  }
+
+  .right-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    outline: none;
+  }
+
+  .left-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+    outline: none;
+  }
+
+  .down-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    position: relative;
+    outline: none;
+
+  }
+
+  .stop-switch {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    margin-left: 5.2rem;
+    margin-top: 3rem;
+    background-color: lightpink;
+    border: solid 2px black;
+  }
+
+  .control-button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+
+  .control-button:focus {
+    outline: none;
+  }
+
+  .control-button:focus-visible {
+    outline: none;
+  }
+
+  .control-button:active {
+    outline: none;
+    opacity: 0.2 !important;
+  }
+
+  .stop-switch:active {
+    background: red !important;
+  }
+}
+
+@media screen and (max-width:360px) {
+  html {
+    touch-action: manipulation;
+  }
+
+  .main-title {
+    margin-top: 1rem;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .producer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .check-online {
+    width: 16px;
+    height: 16px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    border: solid 1px black;
+  }
+
+  .online-speed {
+    display: flex;
+    position: absolute;
+    margin-left: 1.8rem;
+  }
+
+  .up-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 8rem;
+    position: relative;
+    outline: none;
+
+  }
+
+  .right-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    outline: none;
+
+  }
+
+  .left-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.3rem;
+    margin-right: 7.0rem;
+    outline: none;
+
+  }
+
+  .down-arrow {
+    border-radius: 50%;
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    position: relative;
+    outline: none;
+
+  }
+
+  .stop-switch {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    margin-left: 5.2rem;
+    margin-top: 3rem;
+    background-color: lightpink;
+    border: solid 2px black;
+  }
+
+  .control-button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+
+  .control-button:focus {
+    outline: none;
+  }
+
+  .control-button:focus-visible {
+    outline: none;
+  }
+
+  .control-button:active {
+    outline: none;
+    opacity: 0.2 !important;
+  }
+
+  .stop-switch:active {
+    background: red !important;
+  }
+}

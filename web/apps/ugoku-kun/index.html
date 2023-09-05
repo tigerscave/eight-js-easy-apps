@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ugoku-kun</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="main-title">UGOKU-KUN</div>
+  <div class="producer">by adawarp</div>
+  <div class="switch-on-off-panel">
+    <button id="control-on" class="control-on">操作ON</button>
+    <button id="control-off" class="control-off">操作OFF</button>
+  </div>
+  <div class="check-online">
+    <div class="online-speed">
+      <span id="control-mode">ロボット立ち上げ中</span>
+      <div class="voltage-panel">
+        （<span>電圧</span> <span id="sequence">000</span> ）
+      </div> 
+    </div>
+  </div>
+  <div style="margin: 0.5rem; margin-left: 2rem;">
+    受信時刻 <span id="received-time">00:00</span>
+  </div>
+  <div class="main-panel">
+    <div class="upper-part">
+      <button id="up-arrow" class="up-monitor control-button" ontouchstart>上</button>
+    </div>
+    <div class="middle-part">
+      <button id="left-arrow" class="left-arrow control-button" ontouchstart>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="utern-left" width="4.5rem" height="4.5rem">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+        </svg>
+      </button>
+      <button id="down-arrow" class="middle-monitor control-button" ontouchstart>中
+      </button>
+      <button id="right-arrow" class="right-arrow control-button" ontouchstart>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="utern-right" width="4.5rem" height="4.5rem">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" />
+        </svg>
+      </button>
+    </div>
+    <div class="lower-part">
+      <button id="down-arrow2" class="down-monitor control-button" ontouchstart>下</button>
+    </div>
+  </div>
+</body>
+
+<!-- for mqtt-js -->
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script src="main.js"></script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MQTTトレーニング</title>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+
+<body>
+  <div style="border: 1px solid #000;width: 45rem;height: 35rem;">
+    <h3>MQTT hoge fuga pub/sub sample</h3>
+    <h3>Publish
+      <button style="margin-left: 3rem;" id="hoge-button">hoge</button>
+      <button id="fuga-button">fuga</button>
+    </h3>
+    <h3>Subscribe</h3>
+    <ul id="subscribed-items"></ul>
+  </div>
+</body>
+<script>
+  const client = mqtt.connect('wss://test.mosquitto.org:8081');
+  const topic = "eight/training"
+
+  const hogeButton = document.getElementById("hoge-button");
+  const fugaButton = document.getElementById("fuga-button");
+  const makeItems = document.getElementById("subscribed-items");
+
+  hogeButton.addEventListener('click', () => {
+    client.publish(topic, "hoge") // message is Buffer
+  });
+
+  fugaButton.addEventListener('click', () => {
+    client.publish(topic, "fuga") // message is Buffer
+  });
+
+  client.subscribe(topic);
+
+  //messageを受信したら、hoge,fugaの表示をする。
+  client.on('message', (topic, message) => {
+    let li = document.createElement('li');
+    li.textContent = message.toString();
+    makeItems.appendChild(li);
+
+    const listItems = makeList.getElementsByTagName('li');
+    if (listItems.length > 10) {
+      makeItems.removeChild(listItems[0]) //1番古い要素が消える。
+    }
+  });
+
+</script>
+
+</html>
