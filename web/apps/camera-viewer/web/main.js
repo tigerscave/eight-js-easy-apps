@@ -212,15 +212,26 @@ rightSideBtn.addEventListener('click', () => {
 
 
 //pingの値が表示される コード書き途中
-const pingStartBtn = document.getElementById("ping-start")
+const pingStartBtn = document.getElementById("ping-start-btn")
+const pingStopBtn = document.getElementById("ping-stop-btn")
 const pingValue = document.getElementById("ping-value")
 
-pingStartBtn.addEventListener('click', () => {
-  eel.ping_host(host)((result)=> {
-    pingValue.innerText = result;
+pingStartBtn.addEventListener('click', async () => {
+  const host = ipAddressInput.value;
+  const startTime = new Date().getTime(); // ピンク開始時間
+  const result = await eel.ping_host(host)(); // ping_host関数を非同期で呼び出す
+  const endTime = new Date().getTime(); // ピング終了時間
+  const pingTime = endTime - startTime; // ピング実行時間
+  pingValue.innerText = `ping: ${pingTime} ミリ秒`; 
+});
+
+pingStopBtn.addEventListener('click', () => {
+  const host = ipAddressInput.value;
+  eel.ping_host(host)(() => {
+    pingValue.innerText = "";
   });
 });
 
-document.addEventListener("DOMContentLoaded",() => {
+document.addEventListener("DOMContentLoaded", () => {
   eel.init('web');
 });
