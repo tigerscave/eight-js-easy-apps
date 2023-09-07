@@ -14,4 +14,4 @@ def ping_host(host):
 
     return result
 
-eel.start('index.html', mode='chrome', port=8081, size=(600, 400))
+eel.start('index.html', mode='chrome', port=8080, size=(600, 400))

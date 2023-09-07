@@ -214,24 +214,30 @@ rightSideBtn.addEventListener('click', () => {
 //pingの値が表示される コード書き途中
 const pingStartBtn = document.getElementById("ping-start-btn")
 const pingStopBtn = document.getElementById("ping-stop-btn")
-const pingValue = document.getElementById("ping-value")
+const pingResultValue = document.getElementById("ping-value")
+let pingRunning = false;
 
 pingStartBtn.addEventListener('click', async () => {
-  const host = ipAddressInput.value;
-  const startTime = new Date().getTime(); // ピンク開始時間
-  const result = await eel.ping_host(host)(); // ping_host関数を非同期で呼び出す
-  const endTime = new Date().getTime(); // ピング終了時間
-  const pingTime = endTime - startTime; // ピング実行時間
-  pingValue.innerText = `ping: ${pingTime} ミリ秒`; 
+  pingRunning = true;
+  for(let i = 0; i<i+1;i++){
+    if(!pingRunning) {//ping停止ボタンが押されたらループから抜ける。
+      break;
+    }
+    const host = ipAddressInput.value;
+    const startTime = new Date().getTime(); // ping開始時間
+    const result = await eel.ping_host(host)(); // ping_host関数を非同期で呼び出す
+    const endTime = new Date().getTime(); // ping終了時間
+    const pingTime = endTime - startTime; // ping実行時間
+    const newPre = document.createElement("pre");
+    newPre.classList.add("new-pre-class");
+    newPre.textContent = `ping:${pingTime}ミリ秒`;
+    pingResultValue.parentNode.appendChild(newPre);
+
+    await new Promise(resolve => setTimeout(resolve, 1000))
+  }
 });
 
 pingStopBtn.addEventListener('click', () => {
-  const host = ipAddressInput.value;
-  eel.ping_host(host)(() => {
-    pingValue.innerText = "";
-  });
+  pingRunning = false;
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  eel.init('web');
-});
