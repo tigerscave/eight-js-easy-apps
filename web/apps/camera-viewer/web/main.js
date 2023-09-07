@@ -4,22 +4,22 @@
 const zoomInScreenBtn = document.getElementById("zoom-in-screen-btn")
 const zoomOutScreenBtn = document.getElementById("zoom-out-screen-btn")
 const screenPage = document.getElementById("screen-page")
-const screenZoomGradation = document.getElementById("screen-zoom-gradation")
+const screenZoomLevel = document.getElementById("screen-zoom-gradation")
 
-let zoomGradation = 1.0;
+let zoomLevel = 1.0;
 
 zoomInScreenBtn.addEventListener('click', () => {
-  zoomGradation = zoomGradation + 0.1;
+  zoomLevel = zoomLevel + 0.1;
   screenPage.style.transformOrigin = `top left`;//左上を基準
-  screenPage.style.transform = `scale(${zoomGradation})`;//0.1ずつ拡大
-  screenZoomGradation.innerText = zoomGradation.toFixed(1);
+  screenPage.style.transform = `scale(${zoomLevel})`;//0.1ずつ拡大
+  screenZoomLevel.innerText = zoomLevel.toFixed(1);
 });
 
 zoomOutScreenBtn.addEventListener('click', () => {
-  zoomGradation = zoomGradation - 0.1;
+  zoomLevel = zoomLevel - 0.1;
   screenPage.style.transformOrigin = `top left`;
-  screenPage.style.transform = `scale(${zoomGradation})`;
-  screenZoomGradation.innerText = zoomGradation.toFixed(1);
+  screenPage.style.transform = `scale(${zoomLevel})`;
+  screenZoomLevel.innerText = zoomLevel.toFixed(1);
 });
 
 const reloadBtn = document.getElementById("reload-btn")
@@ -209,3 +209,35 @@ leftSideBtn.addEventListener('click', () => {
 rightSideBtn.addEventListener('click', () => {
   cameraViewer.src = "http://" + ipAddressInput.value + "/cgi-bin/camctrl?pan=1&tilt=0&Language=0";
 });
+
+
+//pingの値が表示される コード書き途中
+const pingStartBtn = document.getElementById("ping-start-btn")
+const pingStopBtn = document.getElementById("ping-stop-btn")
+const pingResultValue = document.getElementById("ping-value")
+let pingRunning = false;
+
+pingStartBtn.addEventListener('click', async () => {
+  pingRunning = true;
+  for(let i = 0; i<i+1;i++){
+    if(!pingRunning) {//ping停止ボタンが押されたらループから抜ける。
+      break;
+    }
+    const host = ipAddressInput.value;
+    const startTime = new Date().getTime(); // ping開始時間
+    const result = await eel.ping_host(host)(); // ping_host関数を非同期で呼び出す
+    const endTime = new Date().getTime(); // ping終了時間
+    const pingTime = endTime - startTime; // ping実行時間
+    const newPre = document.createElement("pre");
+    newPre.classList.add("new-pre-class");
+    newPre.textContent = `ping:${pingTime}ミリ秒`;
+    pingResultValue.parentNode.appendChild(newPre);
+
+    await new Promise(resolve => setTimeout(resolve, 1000))
+  }
+});
+
+pingStopBtn.addEventListener('click', () => {
+  pingRunning = false;
+});
+

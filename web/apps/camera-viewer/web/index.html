@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>camera-view-sample</title>
+  <script type="text/javascript" src="/eel.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -69,7 +70,10 @@
         src="http://{ipAddress}/ImageViewer?Mode=Motion&Resolution=640x360&Quality=Standard&Interval=10">
       </iframe>
     </div>
+    <button id="ping-start-btn">ping開始</button>
+    <button id="ping-stop-btn">ping停止</button>
   </div>
+  <pre id="ping-value"></pre>
 </body>
 <script src="main.js"></script>
 
